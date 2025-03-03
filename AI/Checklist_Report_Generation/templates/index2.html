@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>점검 보고서 생성기</title>
+</head>
+<body>
+    <h1>점검 보고서 업로드</h1>
+    <form action="/generate_reports/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">보고서 생성하기</button>
+    </form>
+</body>
+</html>

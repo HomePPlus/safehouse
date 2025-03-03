@@ -1,0 +1,23 @@
+.logo-container {
+  position: relative;
+  top: 5px;
+  left: 40px;
+  margin-left: 350px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-image {
+  width: 48px;
+  height: auto;
+}
+
+.logo-text {
+  font-size: 40px !important;
+  margin-top: 8px;
+  margin-left: -10px;
+  font-weight: bold;
+  color: rgb(8, 68, 13) !important;
+}

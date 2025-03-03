@@ -1,0 +1,6 @@
+.checklist-page-container {
+  height: 1000vh !important;
+  overflow-y: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}

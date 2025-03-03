@@ -1,0 +1,36 @@
+.form-input {
+  width: 350px;
+  height: 14px;
+  margin: 8px 0;
+  padding: 14px;
+  /* padding-left: 25px; */
+  font-family: "eLight";
+  font-size: 13px;
+  border: none;
+  outline: none;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  box-shadow: inset 2px 2px 4px #d5d2ba, inset -2px -2px 4px #ffffe4;
+  transition: all 0.3s ease;
+}
+
+/* textarea 전용 스타일 */
+.textarea-input {
+  height: 325px !important;
+  resize: none;
+  width: 96% !important;
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+  padding: 20px !important;
+}
+
+.form-input:focus {
+  box-shadow: inset 4px 4px 4px #d1d9e6, inset -4px -4px 4px #f9f9f9;
+}
+
+.form-input:disabled {
+  cursor: not-allowed; /* 마우스 커서를 "금지" 모양으로 변경 */
+  background-color: #e2e2e2; /* 배경색 변경 */
+  color: #a9a9a9; /* 텍스트 색상 흐리게 */
+  border-color: #dcdcdc; /* 테두리 색상 변경 */
+}

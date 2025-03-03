@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'eBold';
+  src: url('../src/assets/fonts/eBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'eLight';
+  src: url('../src/assets/fonts/eLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'eMedium';
+  src: url('../src/assets/fonts/eMedium.ttf') format('truetype');
+}
+
+
+body {
+  margin: 0;
+  font-family: 'eBold',sans-serif;
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+
+code {
+  font-family: 'eBold',sans-serif;
+}

@@ -1,0 +1,112 @@
+.detection-stats {
+  padding: 20px;
+  background: transparent;
+  border-radius: 15px;
+  box-shadow: 8px 8px 16px #b8c4d9, -8px -8px 16px #ffffff;
+  height: 44.2%;
+}
+
+/* 셀렉터 컨테이너 스타일링 */
+.area-selector {
+  min-width: 150px;
+  padding: 5px;
+  margin-top: -10px;
+}
+
+/* Ant Design Select 컴포넌트 기본 스타일 커스터마이징 */
+.area-selector .ant-select {
+  width: 150px;
+  font-family: 'eBold';
+}
+
+/* 셀렉터 메인 박스 스타일링 */
+.area-selector .ant-select-selector {
+  background: #e0e5ec !important;
+  border: none !important;
+  border-radius: 10px !important;
+  height: 40px !important;
+  padding: 4px 15px !important;
+  box-shadow: inset 2px 2px 5px #a3b1c6, inset -2px -2px 5px #ffffff !important;
+}
+
+/* 셀렉터 선택된 텍스트 스타일링 */
+.ant-select-selection-item {
+  color: #104e1e !important;
+  font-family: 'eBold' !important;
+  font-size: 18px;
+  line-height: 32px !important;
+}
+
+/* 드롭다운 화살표 스타일링 */
+.ant-select-arrow {
+  color: #104e1e !important;
+  right: 15px !important;
+}
+
+/* 드롭다운 메뉴 스타일링 */
+.ant-select-dropdown {
+  background: #e0e5ec !important;
+  padding: 8px !important;
+  border-radius: 10px !important;
+  box-shadow: 8px 8px 16px #a3b1c6, -8px -8px 16px #ffffff !important;
+}
+
+/* 드롭다운 아이템 스타일링 */
+.ant-select-item {
+  background: transparent !important;
+  color: #104e1e !important;
+  font-family: 'eMedium' !important;
+  font-size: 18px !important;
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+  margin: 4px 0 !important;
+}
+
+/* 드롭다운 아이템 호버 효과 */
+.ant-select-item:hover {
+  background: #d1d9e6 !important;
+  box-shadow: inset 2px 2px 5px #a3b1c6, inset -2px -2px 5px #ffffff !important;
+}
+
+/* 선택된 아이템 스타일링 */
+.ant-select-item-option-selected {
+  background: #d1d9e6 !important;
+  box-shadow: inset 2px 2px 5px #a3b1c6, inset -2px -2px 5px #ffffff !important;
+}
+
+/* 셀렉터 포커스 효과 */
+.ant-select:focus .ant-select-selector,
+.ant-select-focused .ant-select-selector {
+  border: none !important;
+  box-shadow: inset 3px 3px 6px #a3b1c6, inset -3px -3px 6px #ffffff !important;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 0;
+}
+
+/* 차트 컨테이너 크기 조정 */
+.chart-container .recharts-responsive-container {
+  min-height: 200px !important;
+  margin-left: -20px;
+}
+.recharts-legend-wrapper {
+  right: 0 !important;
+  left: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding-right: 10px !important;
+}
+
+
+
+.recharts-legend-item {
+  margin: 5px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}

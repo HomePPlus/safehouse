@@ -1,0 +1,971 @@
+/* ChecklistForm.css */
+.checklist-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* 점검 목록 섹션 */
+.inspection-list-section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.inspection-list-title {
+  font-family: 'eBold';
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* 점검 목록 그리드 레이아웃 */
+.inspection-list-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1.2rem;
+  padding: 0.5rem;
+}
+
+/* 점검 아이템 카드 스타일 */
+.inspection-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.inspection-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  border-color: #cbd5e1;
+}
+
+/* 점검 정보 레이아웃 */
+.inspection-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* 점검 ID와 상태 헤더 */
+.inspection-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.inspection-title span {
+  font-family: 'eBold';
+  color: #1e293b;
+  font-size: 1.1rem;
+}
+
+/* 점검 상세 정보 그리드 */
+.inspection-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+.inspection-details span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* 상태 선택 드롭다운 스타일 */
+.inspection-status-form {
+  position: absolute;
+  top: 0.9rem;
+  right: 1.5rem;
+}
+
+.status-select {
+  padding: 1.4rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #E9D5FF;
+  font-family: 'eMedium';
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* 상태별 스타일 */
+.status-select.예정됨 {
+  background-color: #dbeafe;
+  color: #2563eb;
+  border-color: #bfdbfe;
+}
+
+.status-select.진행중 {
+  background-color: #dcfce7;
+  color: #16a34a;
+  border-color: #bbf7d0;
+}
+
+/* 선택된 아이템 스타일 */
+.inspection-item.selected {
+  background: #fff;
+  border: 2px solid #3b82f6;
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.1);
+}
+
+/* 체크리스트 폼 섹션 */
+.checklist-form-section {
+  position: relative;
+}
+
+.checklist-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* 돌아가기 버튼 스타일 */
+.return-to-list-btn {
+  position: absolute;
+  top: -4rem;
+  right: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-family: 'eMedium';
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.return-to-list-btn:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+  transform: translateY(-1px);
+}
+
+.return-to-list-btn:active {
+  transform: translateY(0);
+}
+
+/* 점검 목록 레이아웃 */
+.checklist-layout {
+  display: flex;
+  gap: 2rem;
+  width: 1650px;
+  margin-left: -200px;
+  margin-top: 1.5rem;
+}
+
+/* 점검 목록 섹션 */
+.inspection-list-form {
+  flex: 1;
+  max-width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* 체크리스트 폼 섹션이 표시될 때 점검 목록 숨기기 */
+.checklist-layout.form-active .inspection-list-form {
+  display: none;
+}
+
+
+/* 체크리스트 폼 섹션 */
+.checklist-form-section {
+  flex: 2;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* DatePicker 스타일 수정 */
+.checklist-datepicker-container {
+  position: relative;
+  width: 100%;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker-popper {
+  position: absolute !important;
+  left: 0 !important;
+  top: 100% !important;
+  margin-top: 8px !important;
+  z-index: 9999 !important;
+}
+
+.checklist-title {
+  font-family: 'eBold';
+  color: #1e293b;
+  margin-top: 3%;
+  margin-left: -17%;
+}
+
+.checklist-section {
+  background: transparent;
+  border-radius: 15px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.05);
+}
+
+.checklist-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(139, 92, 246, 0.08);
+}
+
+.checklist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.checklist-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checklist-section-title {
+  margin: 0;
+  color: #1e293b;
+}
+
+.checklist-subtitle {
+  margin:0 1rem;
+  color: #64748b;
+  font-size: 1.5rem;
+}
+
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.checklist-input-group {
+  background: white;
+  padding: 1rem;
+  
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  margin-bottom: 1rem;
+}
+
+.checklist-input-group:hover {
+  border-color: #e4dff0;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+}
+
+.checklist-input-group:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #3b82f6 0%, #60a5fa 100%);
+  animation: slideIn 0.3s ease;
+}
+
+/* 라디오 그룹 스타일링 */
+.radio-group {
+  background: #FFFFFF;
+  padding: 1rem;
+  width: 87% !important;
+  border-radius: 10px;
+  border: 1px solid #E9D5FF;
+  transition: all 0.3s ease;
+}
+
+.radio-option {
+  background: #FFFFFF;
+  border: 1px solid #E9D5FF;
+  color: #1e293b; /* 기본 텍스트 색상을 검정으로 */
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.radio-option:hover {
+  background: #F5F3FF;
+  border-color: #8B5CF6;
+}
+
+.radio-option.selected {
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+  color: white;
+  border-color: #6D28D9;
+}
+
+/* 입력 필드 스타일링 */
+.checklist-input-group input {
+  width: 100%; /* 입력란이 남은 공간을 채우도록 */
+  max-width: 300px; /* 최대 너비 제한 */
+  font-family: 'eMedium', sans-serif;
+  padding: 0.8rem 1rem;
+  background: #e5eaf2;
+  border: 1px solid #DDD6FE;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.checklist-input-group input:focus {
+  border-color: #8B5CF6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+/* 레이블 스타일링 */
+.checklist-input-group label {
+  min-width: auto;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+/* 네비게이션 버튼 */
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.form-navigation button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  border: 1px solid;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'eMedium';
+  margin: 0 0.5rem;
+}
+
+.form-navigation button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.form-navigation button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 스텝 인디케이터 */
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 1rem; /* 마진 줄임 */
+  padding: 0.8rem; /* 패딩 줄임 */
+  background: linear-gradient(145deg, #F5F3FF 0%, #EDE9FE 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.08);
+}
+
+.step {
+  font-family: 'eMedium', sans-serif;
+  position: relative;
+  padding: 0.6rem 1rem; /* 패딩 줄임 */
+  background: #F5F3FF;
+  border-radius: 8px;
+  color: #6D28D9;
+  transition: all 0.3s ease;
+  font-size: 0.9rem; /* 폰트 크기 줄임 */
+}
+
+.step.active {
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+}
+
+.step:hover {
+  transform: translateY(-2px);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+  .checklist-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Base Style */
+.checklist-input-group {
+  margin-bottom: 15px;
+}
+
+.checklist-input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+.step {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.emergency-action-input {
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed #DDD6FE;
+}
+
+.emergency-action-input input {
+  width: 45%;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* 각 섹션 구분을 위한 스타일 */
+.section-divider {
+  grid-column: 1 / -1;
+  border-bottom: 2px solid #e2e8f0;
+  margin: 1rem 0;
+  padding-bottom: 0.5rem;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+/* 애니메이션 */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 라디오 그룹 스타일링 */
+.radio-group-title {
+  font-family: 'eBold', sans-serif;
+  color: #2c3e50;
+}
+
+.radio-option label {
+  font-family: 'eMedium', sans-serif;
+}
+
+/* 기본 정보 섹션 레이아웃 */
+.basic-info-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;  /* 왼쪽 입력 필드가 더 넓게 */
+  gap: 2rem;
+  align-items: start;
+}
+
+/* 왼쪽 입력 필드 영역 */
+.basic-info-left {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* 2열 그리드로 변경 */
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+/* 기본정보 입력 필드 스타일 */
+.basic-info-input {
+  margin-bottom: 0;  /* 기존 마진 제거 */
+  background: transparent;
+  border: none;
+  width: 80%;
+  padding: 0;
+}
+
+.basic-info-input label {
+  display: block;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.basic-info-input input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  font-size: 0.95rem;
+}
+
+/* 오른쪽 결함 선택 영역 */
+.basic-info-right {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  height: fit-content;
+}
+
+.defect-selection-title {
+  color: #64748b;
+  font-size: 0.9rem;
+
+  margin-bottom: 1rem;
+}
+
+.defect-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+/* 체크박스 옵션 스타일 */
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  font-family: 'eMedium';
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+/* 다음 점검 일정 입력 필드 */
+.checklist-datepicker-container {
+  grid-column: span 2;  /* 2열 모두 차지 */
+  margin-top: 1rem;
+}
+
+.checklist-datepicker-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  font-size: 0.95rem;
+}
+
+/* 상태별 색상 스타일 */
+.status-select.예정됨 {
+  color: #2563eb;
+  background-color: #1378fc;
+}
+
+.status-select.진행중 {
+  color: #059669;
+  background-color: #ecfdf5;
+  border-color: #f36b1c;
+}
+
+.status-select.완료됨 {
+  color: #7c3aed;
+  background-color: #411df5;
+}
+
+.status-select.취소됨 {
+  color: #dc2626;
+  background-color: #f81f1f;
+}
+
+.inspection-id-display {
+  color: #567aaf;
+  font-family: 'eMedium';
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background: #f8fafc;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+/* 색상 변수 정의 */
+:root {
+  --color-basic: #757575;      /* 기본정보 - 밝은 회색 */
+  --color-crack: #FF9F40;      /* 균열 - 주황색 */
+  --color-leak: #9B59B6;       /* 누수/백태 - 보라색 */
+  --color-steel: #A4907C;      /* 강재 손상 - 갈색 */
+  --color-delamination: #4682B4; /* 박리 - 파란색 */
+  --color-rebar: #28B463;      /* 철근 노출 - 초록색 */
+  --color-paint: #FF6B6B;      /* 도장 손상 - 빨간색 */
+}
+
+/* 각 스텝별 스타일 */
+.checklist-section[data-step="basic"] {
+  background: #FFFFFF;
+  border: 1px solid #e2e8f0;
+  padding: 2rem;
+}
+
+.checklist-section[data-step="crack"] {
+  border-color: var(--color-crack);
+  
+  .radio-group { border-color: var(--color-crack); }
+  .radio-option:hover { border-color: var(--color-crack); }
+
+  .radio-option.selected {
+    background: var(--color-crack);
+    border-color: var(--color-crack);
+  }
+  .form-navigation button {
+    background: var(--color-crack);
+    border-color: var(--color-crack);
+  }
+  .radio-group-title { color: var(--color-crack); }
+  input[type='radio'] { accent-color: var(--color-crack); }
+  input[type='text'] { border-color: var(--color-crack); }
+  .checklist-subtitle { color: var(--color-crack); }
+}
+
+.checklist-section[data-step="leak"] {
+  border-color: var(--color-leak);
+  .radio-group { border-color: var(--color-leak); }
+  .radio-option:hover { border-color: var(--color-leak); }
+  .radio-option.selected {
+    background: var(--color-leak);
+    border-color: var(--color-leak);
+  }
+  .form-navigation button {
+    background: var(--color-leak);
+    border-color: var(--color-leak);
+  }
+  .radio-group-title { color: var(--color-leak); }
+  input[type='radio'] { accent-color: var(--color-leak); }
+  input[type='text'] { border-color: var(--color-leak); }
+  .checklist-subtitle { color: var(--color-leak); }
+}
+
+.checklist-section[data-step="steel"] {
+  border-color: var(--color-steel);
+  .radio-group { border-color: var(--color-steel); }
+  .radio-option:hover { border-color: var(--color-steel); }
+  .radio-option.selected {
+    background: var(--color-steel);
+    border-color: var(--color-steel);
+  }
+  .form-navigation button {
+    background: var(--color-steel);
+    border-color: var(--color-steel);
+  }
+  .radio-group-title { color: var(--color-steel); }
+  input[type='radio'] { accent-color: var(--color-steel); }
+  input[type='text'] { border-color: var(--color-steel); }
+  .checklist-subtitle { color: var(--color-steel); }
+}
+
+.checklist-section[data-step="delamination"] {
+  border-color: var(--color-delamination);
+  .radio-group { border-color: var(--color-delamination); }
+  .radio-option:hover { border-color: var(--color-delamination); }
+  .radio-option.selected {
+    background: var(--color-delamination);
+    border-color: var(--color-delamination);
+  }
+  .form-navigation button {
+    background: var(--color-delamination);
+    border-color: var(--color-delamination);
+  }
+  .radio-group-title { color: var(--color-delamination); }
+  input[type='radio'] { accent-color: var(--color-delamination); }
+  input[type='text'] { border-color: var(--color-delamination); }
+  .checklist-subtitle { color: var(--color-delamination); }
+}
+
+.checklist-section[data-step="rebar"] {
+  border-color: var(--color-rebar);
+  .radio-group { border-color: var(--color-rebar); }
+  .radio-option:hover { border-color: var(--color-rebar); }
+  .radio-option.selected {
+    background: var(--color-rebar);
+    border-color: var(--color-rebar);
+  }
+  .form-navigation button {
+    background: var(--color-rebar);
+    border-color: var(--color-rebar);
+  }
+  .radio-group-title { color: var(--color-rebar); }
+  input[type='radio'] { accent-color: var(--color-rebar); }
+  input[type='text'] { border-color: var(--color-rebar); }
+  .checklist-subtitle { color: var(--color-rebar); }
+}
+
+.checklist-section[data-step="paint"] {
+  border-color: var(--color-paint);
+  .radio-group { border-color: var(--color-paint); }
+  .radio-option:hover { border-color: var(--color-paint); }
+  .radio-option.selected {
+    background: var(--color-paint);
+    border-color: var(--color-paint);
+  }
+  .form-navigation button {
+    background: var(--color-paint);
+    border-color: var(--color-paint);
+  }
+  .radio-group-title { color: var(--color-paint); }
+  input[type='radio'] { accent-color: var(--color-paint); }
+  input[type='text'] { border-color: var(--color-paint); }
+  .checklist-subtitle { color: var(--color-paint); }
+}
+
+
+/* 체크박스 스타일 수정 */
+.checkbox-option input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--color-basic);
+}
+
+/* 각 결함 유형별 체크박스 색상 */
+.checkbox-option[data-type="crack"] input[type="checkbox"] { accent-color: var(--color-crack); }
+.checkbox-option[data-type="leak"] input[type="checkbox"] { accent-color: var(--color-leak); }
+.checkbox-option[data-type="steel"] input[type="checkbox"] { accent-color: var(--color-steel); }
+.checkbox-option[data-type="delamination"] input[type="checkbox"] { accent-color: var(--color-delamination); }
+.checkbox-option[data-type="rebar"] input[type="checkbox"] { accent-color: var(--color-rebar); }
+.checkbox-option[data-type="paint"] input[type="checkbox"] { accent-color: var(--color-paint); }
+
+/* 라디오 그룹 타이틀 스타일 */
+.radio-group-title {
+  font-family: 'eMedium';
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 섹션 호버 효과 */
+.checklist-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* 선택된 라디오 옵션 공통 스타일 */
+.radio-option.selected {
+  color: #FFFFFF; /* 선택된 옵션의 텍스트는 흰색으로 */
+}
+
+/* 이전/다음 버튼 기본 스타일 */
+.form-navigation button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  border: 1px solid;
+  color: #252525;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'eMedium';
+  margin: 0 0.5rem;
+}
+
+.form-navigation button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.form-navigation button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 읽기 전용 입력 필드 스타일 */
+.readonly-input {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.readonly-input:focus {
+  outline: none;
+  border-color: #e2e8f0;
+  box-shadow: none;
+}
+
+.checklist-submit-section {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.submit-button {
+  padding: 1rem 2rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #2563eb;
+}
+
+.submit-button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.checklist-inspection-item {
+  background:#e0e5ec;
+  border-radius: 15px;
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 
+    8px 8px 15px rgba(163, 177, 198, 0.3),
+    -8px -8px 15px rgba(255, 255, 255, 0.8),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.checklist-inspection-item:hover {
+  transform: translateY(-3px) translateX(5px);
+  box-shadow: 
+    12px 12px 20px rgba(163, 177, 198, 0.4),
+    -12px -12px 20px rgba(255, 255, 255, 0.9),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.checklist-inspection-item.selected {
+  background: linear-gradient(145deg, #ffffff, #f3f4f6);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 
+    12px 12px 24px rgba(163, 177, 198, 0.5),
+    -12px -12px 24px rgba(255, 255, 255, 1),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+/* 점검 정보 스타일링 */
+.checklist-inspection-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.checklist-inspection-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.checklist-inspection-title span {
+  font-family: 'eBold';
+  color: #1e293b;
+  font-size: 1.1rem;
+}
+
+.checklist-inspection-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.checklist-inspection-details span {
+  color: #64748b;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* 상태 선택 드롭다운 스타일링 */
+.checklist-status-select {
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  font-family: 'eMedium';
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.checklist-status-select.예정됨 {
+  background-color: #dbeafe;
+  color: #2563eb;
+  border-color: #bfdbfe;
+}
+
+.checklist-status-select.진행중 {
+  background-color: #dcfce7;
+  color: #16a34a;
+  border-color: #bbf7d0;
+}
+.checklist-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  font-family: 'eMedium';
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.checklist-modal-content {
+  background: white;
+  padding: 2rem;
+  font-family: 'eMedium';
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+}
+
+.checklist-modal-actions {
+  display: flex;
+  gap: 1rem;
+  
+  font-family: 'eMedium';
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.checklist-modal-actions button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  border: none;
+  
+  font-family: 'eMedium';
+  cursor: pointer;
+}

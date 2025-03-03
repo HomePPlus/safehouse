@@ -1,0 +1,33 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 80px;
+  background-color: transparent !important; /* 투명 배경 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  backdrop-filter: blur(10px); /* 블러 효과 추가 */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 약간의 그림자 */
+}
+
+.header-left .logo {
+  /* color 속성 제거 */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  margin-right: 350px;
+}

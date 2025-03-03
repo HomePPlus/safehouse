@@ -1,0 +1,175 @@
+.inspection-table-container {
+  padding: -20px;
+  margin: 0px;
+  background-color: transparent;
+  width: 100%;
+}
+
+.inspection-table-container h2 {
+  color: #5f5f5f;
+  margin-bottom: 20px;
+  font-family: "eLight";
+}
+
+.inspection-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #d4f0a8;
+  font-family: "eLight";
+  table-layout: fixed;
+}
+
+.inspection-table th,
+.inspection-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #f0d7d7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.inspection-table th {
+  background-color: #f0d7d7;
+  font-weight: bold;
+  color: #495057;
+  font-family: "eMedium";
+}
+
+.inspection-table tr:hover {
+  background-color: #bad1e9;
+}
+
+/* 상태별 배지 스타일 */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+.status-badge.예정됨 {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.status-badge.완료됨 {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-badge.진행중 {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.status-badge.취소됨 {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* 에러 상태 스타일 */
+.error {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-family: "eMedium";
+}
+
+.error {
+  color: #dc3545;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+  .inspection-table-container {
+    margin: 10px;
+    padding: 10px;
+    overflow-x: auto;
+  }
+
+  .inspection-table {
+    font-size: 14px;
+  }
+}
+
+/* 상태 선택 드롭다운 스타일 */
+.status-select {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  font-family: "eMedium";
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px;
+  padding-right: 24px;
+}
+
+.status-select.예정됨 {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.status-select.진행중 {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.status-select.완료됨 {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-select.취소됨 {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.status-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.table-controls {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.status-filter {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: linear-gradient(145deg, #e6e9ef, #ffffff);
+  font-family: "eLight";
+  cursor: pointer;
+  box-shadow: 3px 3px 6px #b8c9e6, -3px -3px 6px #ffffff;
+  transition: all 0.3s ease;
+}
+
+.status-filter:hover {
+  background: linear-gradient(145deg, #f0f3f6, #ffffff);
+  box-shadow: 4px 4px 8px #b8c9e6, -4px -4px 8px #ffffff;
+}
+
+.status-filter option {
+  background: #ffffff;
+  color: #333;
+  padding: 8px;
+}
+
+/* 각 열의 너비 조정 */
+.inspection-table th:nth-child(1) { width: 5%; }  /* 점검 ID */
+.inspection-table th:nth-child(2) { width: 6%; }  /* 유형 */
+.inspection-table th:nth-child(3) { width: 6%; }  /* 상태 */
+.inspection-table th:nth-child(4) { width: 10%; } /* 예정일 */
+.inspection-table th:nth-child(5) { width: 10%; } /* 완료일 */
+.inspection-table th:nth-child(6) { width: 6%; }  /* 점검자 */
+.inspection-table th:nth-child(7) { width: 30%; } /* 신고 내용 */
+.inspection-table th:nth-child(8) { width: 20%; } /* 주소 */
+.inspection-table th:nth-child(9) { width: 8%; }  /* 결함 유형 */

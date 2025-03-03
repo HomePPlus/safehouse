@@ -1,0 +1,358 @@
+/* 전체 레이아웃 컨테이너 */
+.report-detail {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: -50px;
+  margin-left: 15px;
+  padding: 50px;
+}
+
+/* 제목 영역 */
+.report-detail h1 {
+  color: #2c3e50;
+  margin-top: -2rem; /* 커뮤니티와 동일한 여백 */
+  padding-bottom: -1rem;
+}
+
+/* 정보 표시 영역 (작성일, 결함유형) */
+.report-info {
+  display: flex;
+  margin-top: 5px;
+  gap: 2rem;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+/* 주소 영역 */
+.report-address {
+  margin-bottom: 20px;
+}
+
+.report-address h3,
+.report-content h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+/* 내용 영역 */
+.report-content {
+  background: rgba(255, 255, 255, 0.9); /* 부드러운 흰색 배경 */
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #34495e;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 추가 */
+}
+
+/* 이미지 영역 */
+.report-image {
+  margin-bottom: 20px;
+}
+
+.report-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: inset 2px 2px 4px #d5d2ba, inset -2px -2px 4px #ffffe4;
+}
+
+/* 버튼 영역 */
+.report-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  width: 100%;
+  margin-left: -60px;
+}
+
+.report-actions button {
+  padding: 10px 25px;
+  font-size: 14px;
+  min-width: 100px;
+  margin: 0 5px;
+}
+
+/* 목록으로 버튼 */
+.list-button {
+  background: hsl(139, 20%, 48%);
+  color: white;
+  border: none;
+  font-family: 'eLight';
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.list-button:hover {
+  background: #2a7344;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 수정 버튼 */
+/* 수정 모드 입력 필드 스타일 */
+.edit-input,
+.edit-textarea {
+  width: 100%;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  font-family: 'eLight';
+}
+
+.edit-input {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.edit-textarea {
+  height: calc(100% - 40px);
+  resize: none;
+}
+
+.edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-left: 12% !important;
+  margin-top: 10px;
+  margin-right: 10%;
+}
+
+.edit-actions button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  font-family: 'eLight';
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-actions button:first-child {
+  background: #b47770;
+  color: white;
+}
+
+.edit-actions button:last-child {
+  background: #68819e;
+  color: white;
+}
+
+.edit-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-button {
+  background: #68819e;
+  color: white;
+  border: none;
+  font-family: 'eLight';
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.edit-button:hover {
+  background: #357abd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.report-content-edit .edit-input {
+  background-color: #fff;
+  box-shadow: inset 2px 2px 4px #b4b19c, inset -2px -2px 4px #b4b19c;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'eLight';
+  border: none;
+  width: 90%;
+}
+
+.report-content-edit .edit-textarea {
+  background-color: #fff;
+  box-shadow: inset 2px 2px 4px #b4b19c, inset -2px -2px 4px #b4b19c;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'eLight';
+  border: none;
+  width: 90%;
+  height: 50px;
+  resize: none;
+}
+/* 삭제 버튼 */
+.delete-button {
+  background: #b47770;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.delete-button:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 에러 메시지 */
+.loading,
+.error {
+  text-align: center;
+  top: 20vh;
+  font-size: 1.2rem;
+  padding: 2rem;
+}
+
+.error {
+  color: #ff4444;
+}
+
+.report-author {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.image-list {
+  margin: 10px 70px;
+}
+
+.image-item {
+  margin: 5px 0;
+  left: -80px;
+  background-color: #8b303000;
+  font-size: 18px;
+}
+
+.image-item a {
+  color: #047a00;
+  text-decoration: none;
+}
+
+.image-item a:hover {
+  text-decoration: underline;
+}
+
+/* 분석 결과 영역 */
+.detection-result {
+  padding: 20px;
+  border-radius: 12px;
+  min-height: 100px;
+}
+
+.detection-result h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.detection-result p {
+  color: #34495e;
+}
+
+.report-meta {
+  display: flex;
+  gap: 2rem;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f3f2d1;
+  flex-wrap: wrap; /* 긴 주소로 인해 줄바꿈이 필요할 수 있음 */
+}
+
+.report-file {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 10px 0;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.file-text {
+  color: #666;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+
+.report-content-wrapper {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* 3:1 비율로 변경 */
+  gap: 20px;
+  background-color: #fff;
+  padding: 20px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: inset 2px 2px 4px #d5d2ba, inset -2px -2px 4px #ffffe4;
+}
+
+.report-left-column {
+  padding-right: 0px;
+  border-right: 4px solid #e9e8d7;
+}
+
+.report-left-column h3 {
+  font-family: 'eMedium'; /* 기존에 사용하던 폰트 */
+  font-weight: 100;
+  margin-left: 40%;
+}
+
+.report-right-column {
+  padding-left: 20px;
+}
+
+.report-right-column h3 {
+  font-family: 'eMedium'; /* 기존에 사용하던 폰트 */
+  font-weight: 400;
+  margin-left: 25%;
+}
+
+.report-content {
+  background-color: #fff;
+  box-shadow: inset 2px 2px 4px #b3b38f, inset -2px -2px 4px #b3b38f;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-left: 0px;
+  width: 90%;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+.detection-result {
+  background-color: #fff;
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  margin-left: -30px;
+  height: 30%;
+}
+
+.report-file {
+  width: 40%;
+  height: 20%;
+  font-size: 13px;
+  font-family: 'eLight';
+}
+
+/* 첨부파일 아이콘 스타일 */
+.attach-icon {
+  margin-left: 10px;
+  font-size: 1.2rem; /* 아이콘 크기 조정 */
+  color: #2c3e50; /* 아이콘 색상 */
+  cursor: pointer; /* 클릭 가능하게 설정 */
+  transition: color 0.2s ease;
+}
+
+.attach-icon:hover {
+  color: #047a00; /* 호버 시 색상 변경 */
+}

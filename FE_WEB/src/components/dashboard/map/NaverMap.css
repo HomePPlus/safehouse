@@ -1,0 +1,112 @@
+/* NaverMap.css */
+
+/* 헤더 섹션 스타일링 */
+.header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  margin-bottom: 5px;
+  margin-right: 40px;
+  border-radius: 15px;
+  background: #e0e5ec;
+  box-shadow: 8px 8px 16px #a3b1c6, -8px -8px 16px #ffffff;
+}
+
+/* 정보창 스타일링 */
+.info-window {
+  padding: 15px;
+  background: #e0e5ec;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  word-wrap: break-word;
+  position: relative;
+}
+
+/* 화살표 스타일 추가 */
+.info-window::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  background: #e0e5ec;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #e0e5ec;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+}
+
+.info-window h3 {
+  margin: 0 0 10px 0;
+  color: #104e1e;
+  font-family: 'eMedium';
+  font-size: 16px;
+}
+
+.info-window p {
+  margin: 8px 0;
+  color: #104e1e;
+  font-family: 'eLight';
+  font-size: 14px;
+}
+
+/* 로딩 및 에러 상태 스타일링 */
+.loading,
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background: #e0e5ec;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px #a3b1c6, -5px -5px 10px #ffffff;
+  font-family: 'eMedium';
+  color: #104e1e;
+  z-index: 1000;
+}
+
+.error {
+  color: #dc3545;
+}
+
+.map-title {
+  width: 91%;
+  margin-top: 10px;
+}
+
+.map-content-wrapper{
+  width: 95% !important;
+  height: 80% !important;
+}
+
+/* 스크롤 방지를 위한 스타일 수정 */
+.dashboard-section {
+  width: 100%;
+  height: calc(100vh - 100px);  /* 헤더 높이를 고려한 높이 설정 */
+  position: relative;
+  overflow: hidden;
+}
+
+.content-section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.content-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.naver-map {
+  width: 100%;
+  height: 100%;  /* 100vh에서 100%로 변경 */
+  position: relative;
+}
+

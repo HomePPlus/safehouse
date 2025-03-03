@@ -1,0 +1,11 @@
+.svg-border {
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    stroke-dashoffset: 101;
+    stroke-dasharray: 101 101;
+    stroke-width: 4px;
+    top: 0;
+    transition: all .5s, stroke .3s;
+  }
+  

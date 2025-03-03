@@ -1,0 +1,92 @@
+<!-- templates/error.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>오류 발생</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary-color: #FF8A80;
+        --secondary-color: #B388FF;
+        --background-color: #FFF3F0;
+        --section-bg: #ffffff;
+        --text-color: #424242;
+        --border-color: #FFE0DB;
+        --error-color: #FF5252;
+      }
+
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 20px;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      h1 {
+        color: var(--error-color);
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .section {
+        border: none;
+        padding: 25px;
+        margin-bottom: 30px;
+        border-radius: 20px;
+        background-color: var(--section-bg);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      p {
+        color: var(--error-color);
+        font-size: 1.2em;
+        margin: 20px 0;
+        padding: 15px;
+        background-color: rgba(255, 82, 82, 0.1);
+        border-radius: 10px;
+      }
+
+      .home-link {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 25px;
+        margin-top: 20px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(179, 136, 255, 0.3);
+      }
+
+      .home-link:hover {
+        background-color: #7C4DFF;
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 600px) {
+        .section {
+          padding: 15px;
+        }
+        h1 {
+          font-size: 2em;
+        }
+        p {
+          font-size: 1.1em;
+        }
+      }
+    </style>
+</head>
+<body>
+    <h1>🚨 오류 발생!</h1>
+    <div class="section">
+        <p>{{ error_message }}</p>
+        <a href="/" class="home-link">홈으로 돌아가기</a>
+    </div>
+</body>
+</html>

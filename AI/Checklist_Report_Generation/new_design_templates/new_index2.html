@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>점검 보고서 생성기</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary-color: #FF8A80;
+        --secondary-color: #B388FF;
+        --background-color: #FFF3F0;
+        --section-bg: #ffffff;
+        --text-color: #424242;
+        --border-color: #FFE0DB;
+      }
+
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 20px;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      h1 {
+        color: var(--primary-color);
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .section {
+        border: none;
+        padding: 25px;
+        margin-bottom: 30px;
+        border-radius: 20px;
+        background-color: var(--section-bg);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      input[type="file"] {
+        padding: 15px;
+        border: 2px dashed var(--border-color);
+        border-radius: 10px;
+        width: 100%;
+        max-width: 400px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      input[type="file"]:hover {
+        border-color: var(--primary-color);
+        background-color: rgba(255, 138, 128, 0.1);
+      }
+
+      button {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(255, 138, 128, 0.3);
+      }
+
+      button:hover {
+        background-color: #FF5252;
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 600px) {
+        .section {
+          padding: 15px;
+        }
+        input[type="file"] {
+          width: calc(100% - 30px);
+        }
+      }
+    </style>
+</head>
+<body>
+    <h1>점검 보고서 업로드</h1>
+    <div class="section">
+        <form action="/generate_reports/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">보고서 생성하기</button>
+        </form>
+    </div>
+</body>
+</html>

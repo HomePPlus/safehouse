@@ -1,0 +1,9 @@
+.test-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* 전체 화면 높이 */
+  width: 100%; /* 전체 너비 */
+  background: linear-gradient(to right, #a0d8ef, #f9f9f9); /* 배경색 */
+  margin: 0; /* 여백 제거 */
+}

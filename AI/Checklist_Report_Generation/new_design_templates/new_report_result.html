@@ -1,0 +1,129 @@
+<!-- ✅ report_result.html -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>보고서 생성 결과</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary-color: #FF8A80;
+        --secondary-color: #B388FF;
+        --background-color: #FFF3F0;
+        --section-bg: #ffffff;
+        --text-color: #424242;
+        --border-color: #FFE0DB;
+      }
+
+      body {
+        font-family: 'Roboto', sans-serif;
+        margin: 20px;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      h1 {
+        color: var(--primary-color);
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .section {
+        border: none;
+        padding: 25px;
+        margin-bottom: 30px;
+        border-radius: 20px;
+        background-color: var(--section-bg);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 10px;
+        background-color: rgba(255, 138, 128, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      li:hover {
+        transform: translateX(5px);
+        background-color: rgba(255, 138, 128, 0.2);
+      }
+
+      a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      a:hover {
+        color: #FF5252;
+      }
+
+      .home-link {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 25px;
+        margin-top: 20px;
+        box-shadow: 0 4px 8px rgba(179, 136, 255, 0.3);
+      }
+
+      .home-link:hover {
+        background-color: #7C4DFF;
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .download-link {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 15px;
+        margin-left: 10px;
+        box-shadow: 0 2px 4px rgba(255, 138, 128, 0.3);
+      }
+
+      .download-link:hover {
+        background-color: #FF5252;
+        color: white;
+      }
+
+      @media (max-width: 600px) {
+        .section {
+          padding: 15px;
+        }
+        li {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📄 생성된 보고서 목록</h1>
+    <div class="section">
+      <ul>
+        {% for report in reports %}
+        <li>
+          {{ report["점검 번호"] }}
+          <a href="/download/{{ report['점검 번호'].split('/')[-1] }}" class="download-link" download>
+            PDF 다운로드
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <a href="/" class="home-link">🔙 홈으로 돌아가기</a>
+    </div>
+  </body>
+</html>

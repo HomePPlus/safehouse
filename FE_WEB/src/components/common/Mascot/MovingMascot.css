@@ -1,0 +1,149 @@
+/* MovingMascot.css */
+/* 마스코트 컨테이너 설정 */
+.mascot-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* 마우스 이벤트 무시 */
+  z-index: 1; /* 다른 요소 위에 표시 */
+  perspective: 1000px; /* 3D 효과를 위한 원근 설정 */
+}
+
+/* 마스코트 기본 스타일 */
+.mascot {
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  object-fit: contain; /* 이미지 비율 유지 */
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* 자연스러운 가속도 설정 */
+  will-change: transform; /* 하드웨어 가속 활성화 */
+  backface-visibility: hidden; /* 깜빡임 방지 */
+}
+
+/* 1번 마스코트: 왼쪽에서 오른쪽으로 이동 + 3D 바운스 */
+.mascot-1 {
+  animation: 
+    moveLeft 35s linear infinite,
+    bounce3d 0.8s ease-out infinite;
+  filter: drop-shadow(0 5px 3px rgba(0,0,0,0.3)); /* 입체감 있는 그림자 */
+  top: 20%;
+}
+
+/* 2번 마스코트: 원형 이동 + 단계별 바운스 */
+.mascot-2 {
+  animation: 
+    moveCircle 35s linear infinite,
+    bounceStaged 1s ease-out 0.2s infinite; /* 0.2초 딜레이 추가 */
+    top: 60%; /* Y축 위치 설정 */
+    left: 70%;
+}
+
+/* 3번 마스코트: 대각선 이동 + 빠른 바운스 */
+.mascot-3 {
+  animation: 
+    moveDiagonal 35s linear infinite,
+    bounce3d 0.6s ease-out infinite;
+    top: 40%; /* Y축 위치 설정 */
+    left: 20%;
+
+}
+
+/* 3D 바운스 효과 (회전 포함) */
+@keyframes bounce3d {
+  0%, 100% { 
+    transform: translateY(0) rotateZ(0deg); 
+  }
+  30% { 
+    transform: translateY(-40px) rotateZ(-10deg); /* 상승 시 약간 회전 */
+  }
+  70% { 
+    transform: translateY(-20px) rotateZ(10deg); /* 하강 시 반대 회전 */
+  }
+}
+
+/* 단계별 바운스 효과 */
+@keyframes bounceStaged {
+  0%, 100% { 
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  25% { 
+    transform: translateY(-50px) scale(0.9); /* 최고점에서 약간 작아짐 */
+    opacity: 0.9;
+  }
+  50% { 
+    transform: translateY(-20px) scale(1.1); /* 착지 직전 커짐 */
+    opacity: 1;
+  }
+  75% { 
+    transform: translateY(-30px) scale(1); /* 중간 점프 */
+  }
+}
+
+/* 그림자 효과 */
+.mascot::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 15%;
+  width: 70%;
+  height: 8px;
+  background: radial-gradient(rgba(0,0,0,0.3), transparent 70%);
+  border-radius: 50%;
+  animation: shadowEffect 0.8s ease-out infinite;
+}
+
+@keyframes shadowEffect {
+  0%, 100% { 
+    transform: scale(1) translateY(0);
+    opacity: 0.4; 
+  }
+  50% { 
+    transform: scale(0.6) translateY(10px); /* 점프 시 그림자 축소 */
+    opacity: 0.2; 
+  }
+}
+
+/* 이동 애니메이션 보강 */
+@keyframes moveLeft {
+  from { left: -50px; }
+  to { left: 100%; }
+}
+
+/* 2번 마스코트: 원형 이동 수정 */
+@keyframes moveCircle {
+  0% { 
+    transform: translate(10vw, 30vh) rotate(0deg); 
+  }
+  50% { 
+    transform: translate(50vw, 60vh) rotate(180deg); /* 중간 지점 이동 */
+  }
+  100% { 
+    transform: translate(90vw, 30vh) rotate(360deg); 
+  }
+}
+
+/* 3번 마스코트: 대각선 이동 재정의 */
+@keyframes moveDiagonal {
+  0% { 
+    transform: translate(-100%, -100%); 
+  }
+  100% { 
+    transform: translate(100vw, 100vh); /* 뷰포트 전체 이동 */
+  }
+}
+
+/* 요소별 차등 설정 */
+.mascot-1::after { animation-delay: 0.1s; } /* 그림자 타이밍 조절 */
+.mascot-2 { animation-timing-function: ease-in-out; } /* 다른 시간 함수 적용 */
+.mascot-3::after { background: radial-gradient(rgba(100,100,100,0.3), transparent); } /* 다른 그림자 색상 */
+
+/******************************* 조정 가이드 *******************************
+1. 바운스 높이 조정: translateY(-40px) → -60px 등 값 변경
+2. 회전 각도 조정: rotateZ(-10deg) → -15deg 등 각도 변경
+3. 그림자 크기: width:70% → 50% 등으로 변경
+4. 이동 속도: animation-duration 값 조정 (0.8s → 1.2s 등)
+5. 입체감 강화: perspective 값 증가 (1000px → 1500px)
+6. 색상 변경: filter: drop-shadow 값 조정 (rgba(0,0,0,0.3) → rgba(100,0,0,0.5) 등)
+***************************************************************************/
+

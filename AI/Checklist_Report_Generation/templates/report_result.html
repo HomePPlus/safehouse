@@ -1,0 +1,23 @@
+<!-- ✅ report_result.html -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>보고서 생성 결과</title>
+  </head>
+  <body>
+    <h1>📄 생성된 보고서 목록</h1>
+    <ul>
+      {% for report in reports %}
+      <li>
+        {{ report["점검 번호"] }} -
+        <a href="/download/{{ report['점검 번호'].split('/')[-1] }}" download>
+          <!-- ✅ 파일명만 사용 -->
+          PDF 다운로드
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    <a href="/">🔙 홈으로 돌아가기</a>
+  </body>
+</html>

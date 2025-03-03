@@ -1,0 +1,242 @@
+/* Base Style */
+.checklist-input-group {
+  margin-bottom: 15px;
+}
+
+.checklist-input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.checklist-radio-group {
+  display: flex;
+  gap: 20px;
+}
+
+.checklist-radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.radio-label {
+  font-size: 14px;
+  user-select: none;
+}
+
+input[type='radio'] {
+  width: 16px;
+  height: 16px;
+  accent-color: #3498db;
+  cursor: pointer;
+}
+
+/* Damage Range Specific Style */
+.checklist-input-group--damage-range .checklist-radio-group {
+  gap: 25px;
+}
+
+.checklist-input-group--damage-range input[type='radio'] {
+  transform: scale(1.1);
+}
+
+/* 라디오 그룹 기본 스타일 */
+.radio-group {
+  background: #FFFFFF;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* 라디오 그룹 타이틀 스타일 - 모든 타이틀 검정색으로 */
+.radio-group-title {
+  font-family: 'eMedium';
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: #1e293b !important; /* !important로 다른 색상 설정 덮어쓰기 */
+}
+
+.radio-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.radio-option {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* 기본정보와 종합평가를 위한 색상 변수 추가 */
+:root {
+  --color-basic-info: #f1f5f9;  /* 연한 회색 */
+  --color-final-eval: #f1f5f9;  /* 연한 회색 */
+}
+
+/* 기본정보 스텝 스타일 */
+.checklist-section[data-step="basic"] .radio-option {
+  background-color: rgba(241, 245, 249, 0.3);
+  border: 1px solid var(--color-basic-info);
+}
+
+.checklist-section[data-step="basic"] .radio-option.selected {
+  background-color: var(--color-basic-info);
+  color: #1e293b; /* 선택된 상태에서도 텍스트는 검정색 유지 */
+}
+
+/* 종합평가 스텝 스타일 */
+.checklist-section[data-step="final"] .radio-option {
+  background-color: rgba(241, 245, 249, 0.3);
+  border: 1px solid var(--color-final-eval);
+}
+
+.checklist-section[data-step="final"] .radio-option.selected {
+  background-color: var(--color-final-eval);
+  color: #1e293b; /* 선택된 상태에서도 텍스트는 검정색 유지 */
+}
+
+.checklist-section[data-step="crack"] .radio-option {
+  background-color: rgba(255, 159, 64, 0.1);
+  border: 1px solid var(--color-crack);
+}
+
+.checklist-section[data-step="leak"] .radio-option {
+  background-color: rgba(155, 89, 182, 0.1);
+  border: 1px solid var(--color-leak);
+}
+
+.checklist-section[data-step="steel"] .radio-option {
+  background-color: rgba(164, 144, 124, 0.1);
+  border: 1px solid var(--color-steel);
+}
+
+.checklist-section[data-step="delamination"] .radio-option {
+  background-color: rgba(70, 130, 180, 0.1);
+  border: 1px solid var(--color-delamination);
+}
+
+.checklist-section[data-step="rebar"] .radio-option {
+  background-color: rgba(40, 180, 99, 0.1);
+  border: 1px solid var(--color-rebar);
+}
+
+.checklist-section[data-step="paint"] .radio-option {
+  background-color: rgba(255, 107, 107, 0.1);
+  border: 1px solid var(--color-paint);
+}
+
+.checklist-section[data-step="crack"] .radio-option.selected {
+  background-color: var(--color-crack);
+  color: white;
+}
+
+.checklist-section[data-step="leak"] .radio-option.selected {
+  background-color: var(--color-leak);
+  color: white;
+}
+
+.checklist-section[data-step="steel"] .radio-option.selected {
+  background-color: var(--color-steel);
+  color: white;
+}
+
+.checklist-section[data-step="delamination"] .radio-option.selected {
+  background-color: var(--color-delamination);
+  color: white;
+}
+
+.checklist-section[data-step="rebar"] .radio-option.selected {
+  background-color: var(--color-rebar);
+  color: white;
+}
+
+.checklist-section[data-step="paint"] .radio-option.selected {
+  background-color: var(--color-paint);
+  color: white;
+}
+
+.radio-option input[type="radio"] {
+  display: none;
+}
+
+.radio-option label {
+  flex: 1;
+  cursor: pointer;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .radio-options {
+    flex-direction: row;
+  }
+  
+  .radio-option {
+    flex: 1 1 calc(50% - 0.8rem);
+  }
+}
+
+/* 라디오 버튼 컨테이너 */
+.radio-group-container {
+  width: 100%;
+  padding: 0.8rem;
+  background: #FFFFFF;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+}
+
+/* 균열 폭/깊이 입력 필드 스타일링 */
+.crack-measurements {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.crack-measurement-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.crack-measurement-item label {
+  min-width: 100px;
+  white-space: nowrap;
+}
+
+.crack-measurement-item input {
+  width: 100px;
+  padding: 0.5rem;
+  border: 1px solid #DDD6FE;
+  border-radius: 6px;
+}
+
+.crack-measurement-item span {
+  color: #6B7280;
+  font-size: 0.9rem;
+}
+
+/* 라디오 옵션 호버 효과 */
+.radio-option:hover {
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+/* 선택된 라디오 옵션의 텍스트 색상 - 기본정보와 종합평가는 제외 */
+.checklist-section[data-step="crack"] .radio-option.selected,
+.checklist-section[data-step="leak"] .radio-option.selected,
+.checklist-section[data-step="steel"] .radio-option.selected,
+.checklist-section[data-step="delamination"] .radio-option.selected,
+.checklist-section[data-step="rebar"] .radio-option.selected,
+.checklist-section[data-step="paint"] .radio-option.selected {
+  color: #FFFFFF;
+}

@@ -1,0 +1,146 @@
+.alert-container {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  font-family: 'eLight', sans-serif;
+}
+
+.alert-message {
+  padding: 16px 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: slideInRight 0.4s ease forwards, fadeOut 0.4s ease 2.6s forwards;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.alert-message::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+/* 성공 알림 스타일 */
+.alert-success {
+  background: linear-gradient(135deg, rgba(46, 213, 115, 0.95), rgba(37, 194, 160, 0.95));
+  color: #fff;
+}
+
+.alert-success::before {
+  background-color: #2ed573;
+}
+
+/* 에러 알림 스타일 */
+.alert-error {
+  background: linear-gradient(135deg, rgba(255, 71, 87, 0.95), rgba(231, 76, 60, 0.95));
+  color: #fff;
+}
+
+.alert-error::before {
+  background-color: #ff4757;
+}
+
+/* 정보 알림 스타일 */
+.alert-info {
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.95), rgba(41, 128, 185, 0.95));
+  color: #fff;
+}
+
+/* 경고 알림 스타일 */
+.alert-warning {
+  background: linear-gradient(135deg, rgba(241, 196, 15, 0.95), rgba(243, 156, 18, 0.95));
+  color: #fff;
+}
+
+.alert-icon {
+  font-size: 24px;
+  min-width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert-text {
+  font-size: 14px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* 프로그레스 바 애니메이션 */
+.alert-message::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.4);
+  animation: progress 3s linear;
+}
+
+/* 호버 효과 */
+.alert-message:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+/* 슬라이드 인 애니메이션 */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 페이드 아웃 애니메이션 */
+@keyframes fadeOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+}
+
+/* 프로그레스 바 애니메이션 */
+@keyframes progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .alert-container {
+    top: 16px;
+    right: 16px;
+    left: 16px;
+    max-width: none;
+  }
+  
+  .alert-message {
+    padding: 12px 20px;
+  }
+} 

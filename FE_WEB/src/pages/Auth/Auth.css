@@ -1,0 +1,44 @@
+.login-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #ffffff, #ebe8d5);
+  padding: 20px;
+  z-index: 1; /* 파티클 효과 위에 표시되도록 */
+}
+
+.login-container {
+  width: 100%;
+  max-width: 1000px; /* AuthForm의 너비와 동일하게 설정 */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 1200px) {
+  .login-container {
+    transform: scale(0.7);
+  }
+}
+
+@media (max-width: 1000px) {
+  .login-container {
+    transform: scale(0.6);
+  }
+}
+
+@media (max-width: 800px) {
+  .login-container {
+    transform: scale(0.5);
+  }
+}
+
+@media (max-width: 600px) {
+  .login-container {
+    transform: scale(0.4);
+  }
+}

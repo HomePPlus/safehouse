@@ -1,0 +1,72 @@
+#pag-cover {
+  position: relative; /* 수정: absolute -> relative로 변경하여 위치 고정 */
+  margin: auto;
+  width: auto;
+  background-color: rgb(253, 249, 207);
+  border-radius: 10px;
+}
+
+.arr-cover {
+  width: 1px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.arrow {
+  padding: 10px;
+}
+
+.arrow i {
+  font-size: 18px; /* 화살표 아이콘 크기 조정 */
+
+}
+.arrow.disabled {
+  opacity: 0.5; /* 비활성화된 화살표 투명도 */
+}
+#pg-links {
+  display: flex; /* 테이블 대신 flexbox 사용 */
+  justify-content: center; /* 가운데 정렬 */
+  align-items: center; /* 세로 가운데 정렬 */
+  gap: 10px; /* 버튼 간격 추가 */
+  width: 300px;
+}
+
+#pg-links .td {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#links {
+  width: 216px;
+  text-align: center;
+  margin: auto;
+}
+
+.pg-link {
+  display: inline-flex; /* 버튼 내부 텍스트를 가운데 정렬 */
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+.pg-link span {
+  position: relative;
+}
+
+.pg-link:hover {
+  background-color: #f1eecd; /* Hover 시 테이블과 어울리는 색상으로 변경 */
+}
+.pg-link.active {
+  background-color: #f1eecd; /* 현재 페이지 색상 */
+}
+.pg-link.s-hide {
+  color: rgba(255, 255, 255, 0);
+  transition: opacity ease-in-out 0.3s;
+}
+
+#m-pg-link::after {
+  content: "";
+  background: rgba(255, 253, 121, 0.733);
+  transition: 0.3s ease;
+}

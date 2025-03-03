@@ -1,0 +1,123 @@
+/* Sidebar.css */
+/* :root {
+  --sidebar-bg: #f0f0f3;
+  --text-color: #666;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --highlight-color: rgba(255, 255, 255, 0.8);
+  --transition-speed: 0.3s;
+} */
+
+/* 사이드바 기본 스타일 - 뉴모피즘 적용 */
+.sidebar-nav {
+  background: var(--sidebar-bg);
+  width: 13%;
+  height: 100vh;
+  color: #104e1e;
+  background-color: #e0e5ec;
+  padding: 20px;
+  transition: all var(--transition-speed) ease;
+  box-shadow: 20px 20px 60px #d1d1d4, -20px -20px 60px #ffffff;
+  box-sizing: border-box;
+}
+
+/* 사이드바 축소 상태 */
+.sidebar-nav[data-expanded='false'] {
+  width: 80px;
+  padding: 20px 10px;
+}
+
+/* 메뉴 아이템 컨테이너 */
+.sidebar-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 메뉴 아이템 스타일 */
+.sidebar-item-box {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  margin: 15px 0;
+  border-radius: 10px;
+  color: var(--text-color);
+  text-decoration: none;
+  background: var(--sidebar-bg);
+  box-shadow: 5px 5px 10px #d1d1d4, -5px -5px 10px #ffffff;
+  transition: all var(--transition-speed) ease;
+  border: none;
+  cursor: pointer;
+}
+
+/* 호버 효과 */
+.sidebar-item-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 8px 8px 16px #d1d1d4, -8px -8px 16px #ffffff;
+}
+
+/* 아이콘 스타일 */
+.sidebar-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  opacity: 0.8;
+}
+
+/* 텍스트 스타일 */
+.sidebar-item-text {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'eBold';
+  color: var(--text-color);
+}
+
+/* 섹션 헤더 스타일 */
+.sidebar-heading {
+  color: #999;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 16px 8px 8px;
+  text-transform: uppercase;
+}
+
+/* 하단 영역 스타일 */
+.sidebar-bottom {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* 하단 영역 텍스트 스타일 */
+.sidebar-bottom .sidebar-item-text {
+  font-size: 16px; /* 원하는 크기로 조절 */
+  font-family: 'eLight';
+  font-weight: 600; /* 글씨 두께 조절 */
+  color: #104e1e; /* 글씨 색상 변경 */
+}
+
+/* Collapse 아이콘 회전 애니메이션 */
+.sidebar-nav[data-expanded='false'] .sidebar-item-icon svg {
+  transform: rotate(180deg);
+  transition: transform var(--transition-speed) ease;
+}
+
+/* 축소 상태에서 텍스트 숨김 */
+.sidebar-nav[data-expanded='false'] .sidebar-item-text,
+.sidebar-nav[data-expanded='false'] .sidebar-heading-text {
+  display: none;
+}
+
+/* 축소 상태에서 아이콘 정렬 */
+.sidebar-nav[data-expanded='false'] .sidebar-item-box {
+  padding: 12px;
+  justify-content: center;
+}
+
+.sidebar-nav[data-expanded='false'] .sidebar-item-icon {
+  margin-right: 0;
+}

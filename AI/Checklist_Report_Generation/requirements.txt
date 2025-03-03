@@ -1,0 +1,14 @@
+flask
+pymysql
+pandas
+langchain
+fpdf
+duckduckgo-search
+fastapi
+uvicorn
+jinja2
+python-dotenv
+langchain-openai
+python-multipart
+langchain-community
+duckduckgo-search

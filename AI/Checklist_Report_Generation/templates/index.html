@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>점검 체크리스트</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h2 {
+        background-color: #f0f0f0;
+        padding: 10px;
+      }
+      label {
+        display: block;
+        margin: 5px 0;
+      }
+      textarea {
+        width: 100%;
+        height: 60px;
+      }
+      .section {
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-bottom: 20px;
+      }
+      .submit-btn {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>점검 체크리스트</h1>
+
+    <form action="/submit_checklist/" method="post">
+      <div class="section">
+        <h2>1. 기본 정보</h2>
+        <label
+          >점검 번호: <input type="text" name="inspection_id" required
+        /></label>
+        <label
+          >점검 일자: <input type="date" name="inspection_date" required
+        /></label>
+        <label
+          >점검자 이름: <input type="text" name="inspector_name" required
+        /></label>
+        <label
+          >점검자 연락처: <input type="text" name="inspector_contact" required
+        /></label>
+        <label>주소: <input type="text" name="address" required /></label>
+        <label>균열 형태:</label>
+        <label
+          ><input type="checkbox" name="defect_type[]" value="콘크리트 균열" />
+          콘크리트 균열</label
+        >
+        <label
+          ><input type="checkbox" name="defect_type[]" value="누수/백태" />
+          누수/백태</label
+        >
+        <label
+          ><input type="checkbox" name="defect_type[]" value="강재 손상" /> 강재
+          손상</label
+        >
+        <label
+          ><input type="checkbox" name="defect_type[]" value="박리" />
+          박리</label
+        >
+        <label
+          ><input type="checkbox" name="defect_type[]" value="철근 노출" /> 철근
+          노출</label
+        >
+        <label
+          ><input type="checkbox" name="defect_type[]" value="도장 손상" /> 도장
+          손상</label
+        >
+      </div>
+
+      <div class="section">
+        <h2>2. 균열 항목 체크리스트</h2>
+        <h3>[1] 콘크리트 균열</h3>
+        <label>균열의 형태:</label>
+        <label
+          ><input type="radio" name="concrete_crack_type" value="수평" />
+          수평</label
+        >
+        <label
+          ><input type="radio" name="concrete_crack_type" value="수직" />
+          수직</label
+        >
+        <label
+          ><input type="radio" name="concrete_crack_type" value="경사" />
+          경사</label
+        >
+        <label
+          ><input type="radio" name="concrete_crack_type" value="대각선" />
+          대각선</label
+        >
+        <label
+          >균열의 길이:
+          <input type="text" name="concrete_crack_length_cm" /> (단위 :
+          cm)</label
+        >
+        <label
+          >균열의 폭: <input type="text" name="concrete_crack_width_mm" /> (단위
+          : mm)</label
+        >
+        <label
+          >균열의 깊이:
+          <input type="text" name="concrete_crack_depth_mm" /> (단위 :
+          mm)</label
+        >
+        <label>누수 여부:</label>
+        <label
+          ><input type="radio" name="concrete_crack_leakage" value="예" />
+          예</label
+        >
+        <label
+          ><input type="radio" name="concrete_crack_leakage" value="아니오" />
+          아니오</label
+        >
+        <label>균열의 이동성:</label>
+        <label
+          ><input type="radio" name="concrete_crack_movement" value="이동 중" />
+          이동 중</label
+        >
+        <label
+          ><input type="radio" name="concrete_crack_movement" value="고정됨" />
+          고정됨</label
+        >
+        <label>균열의 변화 여부(시간의 경과에 따른):</label>
+        <label
+          ><input type="radio" name="concrete_crack_change" value="확대 됨" />
+          확대 됨</label
+        >
+        <label
+          ><input type="radio" name="concrete_crack_change" value="변화 없음" />
+          변화 없음</label
+        >
+        <label>건전성 평가:</label>
+        <label
+          ><input
+            type="radio"
+            name="concrete_crack_condition"
+            value="위험 있음"
+          />
+          위험 있음</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="concrete_crack_condition"
+            value="위험 없음"
+          />
+          위험 없음</label
+        >
+        <label>응급처치 필요 여부:</label>
+        <label
+          ><input type="radio" name="concrete_crack_emergency" value="필요" />
+          필요</label
+        >
+        <label
+          ><input type="radio" name="concrete_crack_emergency" value="불필요" />
+          불필요</label
+        >
+        <label
+          >응급 조치 사항 :<input
+            type="text"
+            name="concrete_crack_emergency_action"
+        /></label>
+        <label>수리 계획:</label>
+        <label
+          ><input
+            type="radio"
+            name="concrete_crack_repair_plan"
+            value="주입식 수리"
+          />
+          주입식 수리</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="concrete_crack_repair_plan"
+            value="보강 작업"
+          />
+          보강 작업</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="concrete_crack_repair_plan"
+            value="V-컷 및 패칭"
+          />
+          V-컷 및 패칭</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="concrete_crack_repair_plan"
+            value="표면 그라우팅"
+          />
+          표면 그라우팅</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="concrete_crack_repair_plan"
+            value="스티칭"
+          />
+          스티칭</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="concrete_crack_repair_plan"
+            value="균열 절단 및 재시공"
+          />
+          균열 절단 및 재시공</label
+        >
+
+        <h3>[2] 누수/백태</h3>
+        <label>누수 발생 범위:</label>
+        <label
+          ><input type="radio" name="leak_eflo_leakage_range" value="소규모" />
+          소규모</label
+        >
+        <label
+          ><input type="radio" name="leak_eflo_leakage_range" value="중규모" />
+          중규모</label
+        >
+        <label
+          ><input type="radio" name="leak_eflo_leakage_range" value="대규모" />
+          대규모</label
+        >
+        <label>누수의 원인:</label>
+        <label
+          ><input
+            type="radio"
+            name="leak_eflo_leakage_cause"
+            value="기온 변화"
+          />
+          기온 변화</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="leak_eflo_leakage_cause"
+            value="습도 변화"
+          />
+          습도 변화</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="leak_eflo_leakage_cause"
+            value="시공 결함"
+          />
+          시공 결함</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="leak_eflo_leakage_cause"
+            value="재료적 원인"
+          />
+          재료적 원인</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="leak_eflo_leakage_cause"
+            value="배수 및 통풍 문제"
+          />
+          배수 및 통풍 문제</label
+        >
+        <label>백태 발생 여부:</label>
+        <label
+          ><input type="radio" name="leak_eflo_eflorescence" value="예" />
+          예</label
+        >
+        <label
+          ><input type="radio" name="leak_eflo_eflorescence" value="아니오" />
+          아니오</label
+        >
+        <label>누수 및 백태의 영향:</label>
+        <label
+          ><input
+            type="radio"
+            name="leak_eflo_impact"
+            value="구조적 손상 없음"
+          />
+          구조적 손상 없음</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="leak_eflo_impact"
+            value="구조적 손상 가능"
+          />
+          구조적 손상 가능</label
+        >
+        <label>응급처치 필요 여부:</label>
+        <label
+          ><input type="radio" name="leak_eflo_emergency" value="필요" />
+          필요</label
+        >
+        <label
+          ><input type="radio" name="leak_eflo_emergency" value="불필요" />
+          불필요</label
+        >
+        <label
+          >응급 조치 사항 :<input type="text" name="leak_eflo_emergency_action"
+        /></label>
+        <label>수리 계획:</label>
+        <label
+          ><input type="radio" name="leak_eflo_repair_plan" value="방수처리" />
+          방수처리</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="leak_eflo_repair_plan"
+            value="배수 시스템 점검"
+          />
+          배수 시스템 점검</label
+        >
+        <label
+          ><input type="radio" name="leak_eflo_repair_plan" value="균열 보수" />
+          균열 보수</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="leak_eflo_repair_plan"
+            value="표면 복원 작업"
+          />
+          표면 복원 작업</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="leak_eflo_repair_plan"
+            value="내부 압력 차단"
+          />
+          내부 압력 차단</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="leak_eflo_repair_plan"
+            value="그라우팅 주입"
+          />
+          그라우팅 주입</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="leak_eflo_repair_plan"
+            value="구조적 개선"
+          />
+          구조적 개선</label
+        >
+
+        <h3>[3] 강재 손상</h3>
+        <label>손상 범위:</label>
+        <label
+          ><input type="radio" name="steel_damage_range" value="소규모" />
+          소규모</label
+        >
+        <label
+          ><input type="radio" name="steel_damage_range" value="중규모" />
+          중규모</label
+        >
+        <label
+          ><input type="radio" name="steel_damage_range" value="대규모" />
+          대규모</label
+        >
+        <label>손상 정도:</label>
+        <label
+          ><input type="radio" name="steel_damage_severity" value="부식" />
+          부식</label
+        >
+        <label
+          ><input type="radio" name="steel_damage_severity" value="찌그러짐" />
+          찌그러짐</label
+        >
+        <label
+          ><input type="radio" name="steel_damage_severity" value="파손" />
+          파손</label
+        >
+        <label>손상의 원인:</label>
+        <label
+          ><input
+            type="radio"
+            name="steel_damage_cause"
+            value="시공 및 제작 결함"
+          />
+          시공 및 제작 결함</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="steel_damage_cause"
+            value="피로 및 반복 하중"
+          />
+          피로 및 반복 하중</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="steel_damage_cause"
+            value="열적 영향 및 온도 변화"
+          />
+          열적 영향 및 온도 변화</label
+        >
+        <label
+          ><input type="radio" name="steel_damage_cause" value="구조적 문제" />
+          구조적 문제</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="steel_damage_cause"
+            value="충격 및 외부 요인"
+          />
+          충격 및 외부 요인</label
+        >
+        <label>구조적 안전성에 미치는 영향:</label>
+        <label
+          ><input
+            type="radio"
+            name="steel_damage_stability_impact"
+            value="안전성에 영향 없음"
+          />
+          안전성에 영향 없음</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="steel_damage_stability_impact"
+            value="안전성에 영향 있음"
+          />
+          안전성에 영향 있음</label
+        >
+        <label>응급처치 필요 여부:</label>
+        <label
+          ><input type="radio" name="steel_damage_emergency" value="필요" />
+          필요</label
+        >
+        <label
+          ><input type="radio" name="steel_damage_emergency" value="불필요" />
+          불필요</label
+        >
+        <label
+          >응급 조치 사항 :<input
+            type="text"
+            name="steel_damage_emergency_action"
+        /></label>
+        <label>수리 계획:</label>
+        <label
+          ><input
+            type="radio"
+            name="steel_damage_repair_plan"
+            value="균열부 재용접"
+          />
+          균열부 재용접</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="steel_damage_repair_plan"
+            value="강재 교체"
+          />
+          강재 교체</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="steel_damage_repair_plan"
+            value="기계적 교정"
+          />
+          기계적 교정</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="steel_damage_repair_plan"
+            value="열처리 및 인성 회복"
+          />
+          열처리 및 인성 회복</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="steel_damage_repair_plan"
+            value="보강, 패치 플레이트 부착"
+          />
+          보강, 패치 플레이트 부착</label
+        >
+
+        <h3>[4] 박리</h3>
+        <label>박리 범위:</label>
+        <label
+          ><input type="radio" name="delamination_range" value="소규모" />
+          소규모</label
+        >
+        <label
+          ><input type="radio" name="delamination_range" value="중규모" />
+          중규모</label
+        >
+        <label
+          ><input type="radio" name="delamination_range" value="대규모" />
+          대규모</label
+        >
+        <label>박리의 원인:</label>
+        <label
+          ><input
+            type="radio"
+            name="delamination_cause"
+            value="내부 압력 증가"
+          />
+          내부 압력 증가</label
+        >
+        <label
+          ><input type="radio" name="delamination_cause" value="시공 불량" />
+          시공 불량</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="delamination_cause"
+            value="외부 환경 요인"
+          />
+          외부 환경 요인</label
+        >
+        <label
+          ><input type="radio" name="delamination_cause" value="구조적 문제" />
+          구조적 문제</label
+        >
+        <label>구조적 안전성에 미치는 영향:</label>
+        <label
+          ><input
+            type="radio"
+            name="delamination_stability_impact"
+            value="안전성에 영향 없음"
+          />
+          안전성에 영향 없음</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="delamination_stability_impact"
+            value="안전성에 영향 있음"
+          />
+          안전성에 영향 있음</label
+        >
+        <label>응급처치 필요 여부:</label>
+        <label
+          ><input type="radio" name="delamination_emergency" value="필요" />
+          필요</label
+        >
+        <label
+          ><input type="radio" name="delamination_emergency" value="불필요" />
+          불필요</label
+        >
+        <label
+          >응급 조치 사항 :<input
+            type="text"
+            name="delamination_emergency_action"
+        /></label>
+        <label>수리 계획:</label>
+        <label
+          ><input
+            type="radio"
+            name="delamination_repair_plan"
+            value="구조적 문제"
+          />
+          표면 보수</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="delamination_repair_plan"
+            value="패칭 보수"
+          />
+          패칭 보수</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="delamination_repair_plan"
+            value="철근 보강 후 보수"
+          />
+          철근 보강 후 보수</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="delamination_repair_plan"
+            value="구조적 보강 및 보수"
+          />
+          구조적 보강 및 보수</label
+        >
+
+        <h3>[5] 철근 노출</h3>
+        <label>노출 범위:</label>
+        <label
+          ><input type="radio" name="rebar_exposure_range" value="소규모" />
+          소규모</label
+        >
+        <label
+          ><input type="radio" name="rebar_exposure_range" value="중규모" />
+          중규모</label
+        >
+        <label
+          ><input type="radio" name="rebar_exposure_range" value="대규모" />
+          대규모</label
+        >
+        <label>노출된 철근 상태:</label>
+        <label
+          ><input
+            type="radio"
+            name="rebar_exposure_condition"
+            value="부식 없음"
+          />
+          부식 없음</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="rebar_exposure_condition"
+            value="경미한 부식"
+          />
+          경미한 부식</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="rebar_exposure_condition"
+            value="심각한 부식"
+          />
+          심각한 부식</label
+        >
+        <label>노출의 원인:</label>
+        <label
+          ><input type="radio" name="rebar_exposure_cause" value="시공 불량" />
+          시공 불량</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="rebar_exposure_cause"
+            value="재료적 문제"
+          />
+          재료적 문제</label
+        >
+        <label
+          ><input type="radio" name="rebar_exposure_cause" value="환경 요인" />
+          환경 요인</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="rebar_exposure_cause"
+            value="구조적 문제"
+          />
+          구조적 문제</label
+        >
+        <label>구조적 안전성에 미치는 영향:</label>
+        <label
+          ><input
+            type="radio"
+            name="rebar_exposure_stability_impact"
+            value="안전성에 영향 없음"
+          />
+          안전성에 영향 없음</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="rebar_exposure_stability_impact"
+            value="안전성에 영향 있음"
+          />
+          안전성에 영향 있음</label
+        >
+        <label>응급처치 필요 여부:</label>
+        <label
+          ><input type="radio" name="rebar_exposure_emergency" value="필요" />
+          필요</label
+        >
+        <label
+          ><input type="radio" name="rebar_exposure_emergency" value="불필요" />
+          불필요</label
+        >
+        <label
+          >응급 조치 사항 :<input
+            type="text"
+            name="rebar_exposure_emergency_action"
+        /></label>
+        <label>수리 계획:</label>
+        <label
+          ><input
+            type="radio"
+            name="rebar_exposure_repair_plan"
+            value="철근 교체 및 추가 보강"
+          />
+          철근 교체 및 추가 보강</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="rebar_exposure_repair_plan"
+            value="방청 처리"
+          />
+          방청 처리</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="rebar_exposure_repair_plan"
+            value="보수 모르타르 충전"
+          />
+          보수 모르타르 충전</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="rebar_exposure_repair_plan"
+            value="표면 마감"
+          />
+          표면 마감</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="rebar_exposure_repair_plan"
+            value="FRP 보강재 및 강판 보강 적용"
+          />
+          FRP 보강재 및 강판 보강 적용</label
+        >
+
+        <h3>[6] 도장 손상</h3>
+        <label>손상 범위:</label>
+        <label
+          ><input type="radio" name="paint_damage_range" value="소규모" />
+          소규모</label
+        >
+        <label
+          ><input type="radio" name="paint_damage_range" value="중규모" />
+          중규모</label
+        >
+        <label
+          ><input type="radio" name="paint_damage_range" value="대규모" />
+          대규모</label
+        >
+        <label>손상의 원인:</label>
+        <label
+          ><input type="radio" name="paint_damage_cause" value="재료적 원인" />
+          재료적 원인</label
+        >
+        <label
+          ><input type="radio" name="paint_damage_cause" value="시공 불량" />
+          시공 불량</label
+        >
+        <label
+          ><input type="radio" name="paint_damage_cause" value="환경적 원인" />
+          환경적 원인</label
+        >
+        <label
+          ><input type="radio" name="paint_damage_cause" value="구조적 요인" />
+          구조적 요인</label
+        >
+        <label>손상의 상태:</label>
+        <label
+          ><input
+            type="radio"
+            name="paint_damage_condition"
+            value="표면 손상"
+          />
+          표면 손상</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="paint_damage_condition"
+            value="깊은 손상"
+          />
+          깊은 손상</label
+        >
+        <label>응급처치 필요 여부:</label>
+        <label
+          ><input type="radio" name="paint_damage_emergency" value="필요" />
+          필요</label
+        >
+        <label
+          ><input type="radio" name="paint_damage_emergency" value="불필요" />
+          불필요</label
+        >
+        <label
+          >응급 조치 사항 :<input
+            type="text"
+            name="paint_damage_emergency_action"
+        /></label>
+        <label>수리 계획:</label>
+        <label
+          ><input
+            type="radio"
+            name="paint_damage_repair_plan"
+            value="균열 수리"
+          />
+          균열 수리</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="paint_damage_repair_plan"
+            value="박리 및 들뜸 수리"
+          />
+          박리 및 들뜸 수리</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="paint_damage_repair_plan"
+            value="기포 및 블리스터 수리"
+          />
+          기포 및 블리스터 수리</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="paint_damage_repair_plan"
+            value="분말화 수리"
+          />
+          분말화 수리</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="paint_damage_repair_plan"
+            value="변색 및 오염 수리"
+          />
+          변색 및 오염 수리</label
+        >
+      </div>
+
+      <div class="section">
+        <h2>3. 종합 평가</h2>
+        <label>전체 점검 결과:</label>
+        <label
+          ><input
+            type="radio"
+            name="overall_result"
+            value="안전성에 문제 없음"
+            required
+          />
+          안전성에 문제 없음</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="overall_result"
+            value="구조적 문제 발생 가능성 있음"
+            required
+          />
+          구조적 문제 발생 가능성 있음</label
+        >
+        <label>모니터링 필요 여부:</label>
+        <label
+          ><input type="radio" name="monitoring_required" value="필요" />
+          필요</label
+        >
+        <label
+          ><input type="radio" name="monitoring_required" value="불필요" />
+          불필요</label
+        >
+        <label
+          >다음 점검 일정: <input type="text" name="next_inspection_date"
+        /></label>
+      </div>
+
+      <button type="submit" class="submit-btn">제출</button>
+    </form>
+  </body>
+</html>

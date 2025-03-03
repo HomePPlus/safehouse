@@ -1,0 +1,143 @@
+/* TodayInspection.css */
+
+.today-inspection-container {
+  background: transparent;
+  max-height: 400px; /* 높이 제한 */
+  border-radius: 15px;
+}
+.today-inspection-title {
+  color: #5167e6a8 !important;
+}
+
+.inspection-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 카드 크기 축소 */
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+
+/* 상태별 카드 스타일 */
+.inspection-card {
+  padding: 1rem;
+  font-size: 0.9rem; /* 폰트 크기 축소 */
+  min-height: 200px; /* 최소 높이 설정 */
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* 예정됨 상태 */
+.inspection-card .status-scheduled {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.inspection-card:has(.status-scheduled) {
+  background: #e3f2fd !important;
+  box-shadow: 
+    9px 9px 16px rgba(25, 118, 210, 0.3),
+    -9px -9px 16px rgba(255, 255, 255, 0.7);
+}
+
+/* 진행중 상태 */
+.inspection-card .status-in-progress {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.inspection-card:has(.status-in-progress) {
+  background: #fff3e0 !important;
+  box-shadow: 
+    9px 9px 16px rgba(245, 124, 0, 0.3),
+    -9px -9px 16px rgba(255, 255, 255, 0.7);
+}
+
+/* 완료됨 상태 */
+.inspection-card .status-completed {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.inspection-card:has(.status-completed) {
+  background: #e8f5e9 !important;
+  box-shadow: 
+    9px 9px 16px rgba(46, 125, 50, 0.3),
+    -9px -9px 16px rgba(255, 255, 255, 0.7);
+}
+
+/* 취소됨 상태 */
+.inspection-card .status-cancelled {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.inspection-card:has(.status-cancelled) {
+  background: #ffebee !important;
+  box-shadow: 
+    9px 9px 16px rgba(198, 40, 40, 0.3),
+    -9px -9px 16px rgba(255, 255, 255, 0.7);
+}
+
+.inspection-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    4px 4px 8px rgba(0, 0, 0, 0.2),
+    -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+.inspection-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.inspection-type {
+  color: #2d4263;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.inspection-status {
+  padding: 0.3rem 0.8rem;
+  font-family: 'eMedium';
+  border-radius: 15px;
+  font-size: 1.3rem;
+}
+
+.inspection-body {
+  color: #4a4a4a;
+}
+
+.inspection-detail {
+  margin: 0.4rem 0;
+  padding: 0.4rem;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 
+    inset 3px 3px 5px rgba(163, 177, 198, 0.2),
+    inset -3px -3px 5px rgba(255, 255, 255, 0.3);
+}
+
+.inspection-detail strong,
+.inspection-description strong {
+  color: #104e1e;
+  margin-right: 8px;
+}
+
+.inspection-description {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  max-height: 60px; /* 설명 높이 제한 */
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.no-inspection-message {
+  color: #2e3b88e0 !important;
+}

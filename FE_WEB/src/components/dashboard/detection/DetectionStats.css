@@ -1,0 +1,78 @@
+.detection-stats {
+  padding: 20px;
+  background: transparent;
+  border-radius: 15px;
+  box-shadow: 8px 8px 16px #b8c4d9, -8px -8px 16px #ffffff;
+
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0; /* 마진 제거 */
+  padding: 0 5px;
+}
+
+.section-title {
+  margin: 0;
+  color: #104e1e;
+  font-size: 1.2em; /* 글자 크기 축소 */
+}
+
+.chart-container {
+  display: flex;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  align-items: center;
+  position: relative;
+  padding: 0; /* 패딩 제거 */
+}
+
+/* 차트 컨테이너 크기 조정 */
+.chart-container .recharts-responsive-container {
+  min-height: 250px !important;
+  margin-left: -20px; /* 왼쪽으로 더 붙이기 */
+}
+
+/* 범례 스타일링 */
+.recharts-legend-wrapper {
+  right: 0 !important;
+  left: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding-right: 10px !important;
+}
+
+.recharts-legend-item {
+  margin: 5px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.error-message-overlay {
+  position: absolute; /* 차트 위에 위치 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  z-index: 2; /* 차트 위에 표시 */
+}
+
+.error-message {
+  font-size: 24px; /* 메시지 크기 조정 */
+  color: #104e1e; /* 메시지 색상 */
+
+}
+
+
+.chart-container {
+  height: calc(100% - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

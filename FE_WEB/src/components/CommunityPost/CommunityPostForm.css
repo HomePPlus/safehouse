@@ -1,0 +1,73 @@
+.community-post-write-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  margin-top: 10rem;
+}
+
+.community-post-input-wrapper {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.community-post-input-wrapper label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.community-post-button-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.community-post-submit-button,
+.community-post-cancel-button {
+  padding: 8px 30px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  min-width: 100px;
+}
+
+.community-post-submit-button {
+  background-color: #1b4c2e;
+  color: white;
+}
+
+.community-post-cancel-button {
+  background-color: #ffd84d;
+  color: #333;
+}
+
+.community-post-submit-button:disabled,
+.community-post-cancel-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .community-post-write-container {
+    padding: 16px;
+    margin-top: 40px;
+  }
+
+  .community-post-button-wrapper {
+    flex-direction: column;
+  }
+
+  .community-post-submit-button,
+  .community-post-cancel-button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}

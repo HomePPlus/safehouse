@@ -1,0 +1,22 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px;
+    margin: 20px;;
+    background:#ebe8d5; /* Light gray background for neumorphism */
+    border-radius: 12px;
+    box-shadow: 10px 10px 10px #d5d2ba, -10px -10px 10px #ffffe4;
+    width: 100%;
+    max-width: 900px;
+    height: 470px;
+  }
+  
+  .form-group > * {
+    margin-bottom: 15px; /* Spacing between child elements */
+  }
+  
+  .form-group > *:last-child {
+    margin-bottom: 0; /* Remove margin for the last child */
+  }
+  

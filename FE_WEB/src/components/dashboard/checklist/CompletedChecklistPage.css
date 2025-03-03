@@ -1,0 +1,54 @@
+.completed-checklist-page {
+  padding: 2rem;
+}
+
+.completed-checklist-page h1 {
+  font-family: 'eBold';
+  color: #1e293b;
+  margin-bottom: 2rem;
+}
+
+.checklist-table-container {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.checklist-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.checklist-table th,
+.checklist-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.checklist-table th {
+  background-color: #f8fafc;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.checklist-table tr:hover {
+  background-color: #f1f5f9;
+}
+
+.download-btn {
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'eMedium';
+  transition: all 0.2s;
+}
+
+.download-btn:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+} 

@@ -1,0 +1,111 @@
+.dashboard-section {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background: linear-gradient(145deg, #e9dfee, #e6eefa);
+}
+.dashboard-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 12px 12px 24px #a3b1c6, -12px -12px 24px #ffffff;
+  transition: all 0.3s ease;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  width: 100%;
+  height: 100%;
+}
+
+.header-section {
+  padding: 20px 30px;
+  height: 50px;
+  margin-left: 1%;
+  margin-right: 40px;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #eee, #dce1e8);
+  box-shadow: 5px 5px 10px #b8c4d9, -5px -5px 10px #ffffff;
+}
+
+.section-title {
+  color: #104e1e;
+  font-size: 23px !important;
+  min-height: 40px;
+  margin-top: 18px !important;
+  margin-left: 14px !important;
+}
+
+.section-title:hover {
+  cursor: pointer;
+}
+
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: 90%;
+  max-height: 77%;
+  left: 1%;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #e8ecf2, #d8dde4);
+  box-shadow: inset 3px 3px 6px #b8c4d9, inset -3px -3px 6px #ffffff, 8px 8px 16px #a3b1c6, -8px -8px 16px #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.naver-map {
+  width: 100%;
+  height: 100%;
+
+  max-width: 840px;
+  max-height: 900px;
+  border-radius: 10px;
+}
+
+
+.area-selector {
+  min-width: 150px;
+  padding: 5px;
+}
+
+@media (max-width: 1200px) {
+  .header-section {
+    padding: 15px 20px;
+  }
+
+  .content-wrapper {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-section {
+    margin-right: 20px;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .content-wrapper {
+    margin-right: 20px;
+    padding: 15px;
+  }
+}
+
+.map-container {
+  flex: 1;
+  background: linear-gradient(145deg, #e8ecf2, #d8dde4) !important;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  max-width: 100%;
+  height: 500px;
+  box-shadow: 8px 8px 16px #b8c4d9, -8px -8px 16px #ffffff;
+  overflow: hidden;
+}

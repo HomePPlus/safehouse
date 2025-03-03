@@ -1,0 +1,177 @@
+/* ReportList.css */
+
+.report-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #ffffff, #ebe8d5);
+  padding: 20px;
+  z-index: 1;
+}
+
+.reportlist-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 10vh !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.report-board {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading,
+.error {
+  text-align: center;
+  margin-top: 25vh;
+  font-size: 1.2rem;
+  padding: 2rem;
+}
+
+.report-table {
+  table-layout: fixed; /* 고정 너비 테이블 레이아웃 */
+  position: relative;
+  width: 100%;
+  top: -3vh;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: #fff5f7; /* 연한 핑크 베이스 */
+  box-shadow: inset 2px 2px 4px #d5d2ba, inset -2px -2px 4px #fcfcfa;
+}
+
+.report-table th {
+  background: #f1eecd; /* 진한 코랄 핑크 */
+  color: #6d6767;
+  padding: 15px;
+  font-family: "eLight";
+  text-align: center;
+  border-top: 1px solid #1a4d0d;
+  border-bottom: 1px solid #1a4d0d;
+  font-weight: 600;
+}
+
+.report-table td {
+  padding: 15px;
+  border-bottom: 1px solid #126b21;
+  background-color: #fffef2;
+  font-family: "eMedium";
+  color: #5a5a5a;
+  text-align: center;
+  max-width: 200px; /* 최대 너비 설정 */
+  white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+/* 제목과 내용 컬럼에 대해서만 다르게 적용 */
+.report-table td:nth-child(2) {
+  /* 제목 컬럼 */
+  max-width: 300px; /* 더 넓은 최대 너비 */
+  line-height: 1.4; /* 줄간격 설정 */
+  overflow: hidden; /* 넘치는 텍스트 숨김 */
+  text-overflow: ellipsis; /* 말줄임표 표시 */
+}
+/* 작성자 컬럼 스타일 수정 */
+.report-table td:nth-child(3) {
+  /* 작성자 컬럼 */
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 각 컬럼 너비 조정 */
+.report-table th:nth-child(1) {
+  width: 10%;
+} /* 번호 */
+.report-table th:nth-child(2) {
+  width: 30%;
+} /* 제목 */
+.report-table th:nth-child(3) {
+  width: 20%;
+} /* 작성자 */
+.report-table th:nth-child(4) {
+  width: 30%;
+} /* 작성일 */
+.report-table th:nth-child(5) {
+  width: 15%;
+} /* 결함 유형 */
+
+.report-table tr:last-child td {
+  border-bottom: none;
+}
+
+.report-table tr:hover {
+  background: #f0eee3; /* 호버 시 미묘한 색 변화 */
+}
+
+.button-report {
+  font-weight: 500;
+  padding: 8px 25px;
+  background-color: #095309;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "eMedium";
+  margin-left: auto;
+  margin-right: 80px;
+  margin-top: 10px;
+  font-size: 14px;
+  height: 35px;
+  width: 130px;
+  display: block;
+}
+
+.form-group{
+  position:  relative !important;
+}
+
+.button-report:hover {
+  background-color: #0a8d15;
+  color: rgb(240, 227, 108);
+  transform: scale(1.04);
+}
+
+.pagination-container-report {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 7%;
+  margin-top: 20px;
+}
+
+.arrow:hover,
+.pg-link:hover{
+  cursor: pointer;
+}
+
+
+.delete-button {
+  background-color: #d1d1d1;
+  color: rgb(122, 122, 122);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: "eLight";
+  transition: background 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .report-board {
+    padding: 10px;
+  }
+}

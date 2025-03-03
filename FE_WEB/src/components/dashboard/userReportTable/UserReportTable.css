@@ -1,0 +1,272 @@
+.userReport-table-container {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.userReport-table-container h2 {
+  color: #5f5f5f;
+  margin-bottom: 20px;
+  font-family: "eLight";
+}
+
+.userReport-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #d4f0a8;
+  font-family: "eLight";
+}
+
+.userReport-table th,
+.userReport-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #f0d7d7;
+}
+
+.userReport-table th {
+  background-color: #f0d7d7;
+  font-weight: bold;
+  color: #495057;
+  font-family: "eMedium";
+}
+
+/* 각 칼럼 너비 조정 */
+
+.userReport-table th:nth-child(1), /* 신고일 */
+.userReport-table td:nth-child(1) {
+  width: 6%;
+}
+
+.userReport-table th:nth-child(2), /* 신고내용 */
+.userReport-table td:nth-child(2) {
+  width: 10%;
+}
+
+.userReport-table th:nth-child(3), /* 주소 */
+.userReport-table td:nth-child(3) {
+  width: 20%;
+}
+
+.userReport-table th:nth-child(4), /* 신고결함유형 */
+.userReport-table td:nth-child(4) {
+  width: 22%;
+}
+
+.userReport-table th:nth-child(5), /* AI분석결함*/
+.userReport-table td:nth-child(5) {
+  width: 12%;
+}
+
+.userReport-table th:nth-child(6), /*위험 점수 */
+.userReport-table td:nth-child(6) {
+  width: 12%;
+}
+.userReport-table th:nth-child(7), /*위험 점수 */
+.userReport-table td:nth-child(7) {
+  width: 10%;
+}
+.userReport-table tr:hover {
+  background-color: #bad1e9;
+  position: relative;
+  z-index: 1;
+}
+
+.userReport-schedule-button {
+  padding: 6px 6px;
+  border-radius: 12px;
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border: none;
+  cursor: pointer;
+  font-family: "eMedium";
+  font-size: 0.85em;
+  transition: background-color 0.3s;
+}
+
+.userReport-schedule-button:hover {
+  background-color: #bbdefb;
+}
+
+/* 기존 알림 관련 스타일 삭제 */
+.userReport-error {
+  display: none; /* 이 스타일을 삭제하거나 주석 처리 */
+}
+
+@media (max-width: 1024px) {
+  .userReport-table-container {
+    margin: 10px;
+    padding: 10px;
+    overflow-x: auto;
+  }
+
+  .userReport-table {
+    font-size: 14px;
+  }
+}
+
+.userReport-datepicker-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #e0e5ec;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 8px 8px 16px #b8c4d9, -8px -8px 16px #ffffff;
+  z-index: 9999;
+  width: auto;
+  height: auto;
+}
+
+.datepicker-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.datepicker-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.react-datepicker-wrapper {
+  display: inline-block;
+  width: auto;
+}
+
+.react-datepicker-popper {
+  position: static !important;
+  transform: none !important;
+}
+
+.userReport-datepicker-submit-button {
+  padding: 6px 12px;
+  border-radius: 12px;
+  background-color: #e3f2fd; /* 뉴모피즘 버튼 색상 */
+  color: #1976d2;
+  border: none;
+  cursor: pointer;
+  font-family: "eMedium"; /* 원하는 폰트 적용 */
+  font-size: 0.85em;
+  transition: background-color 0.3s;
+  box-shadow: -2px -2px 5px #ffffff, 2px 2px 5px rgba(94, 104, 121, 0.2); /* 뉴모피즘 버튼 그림자 */
+}
+
+.userReport-datepicker-submit-button:hover {
+  background-color: #bbdefb;
+  box-shadow: -2px -2px 5px #ffffff, 2px 2px 5px rgba(94, 104, 121, 0.3); /* 호버 시 그림자 강조 */
+}
+
+/* DatePicker 스타일링 */
+.react-datepicker {
+  position: static !important;
+  transform: none !important;
+  font-family: "eMedium";
+  background: #e0e5ec !important;
+  border: none !important;
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1), 
+              inset -3px -3px 6px rgba(255, 255, 255, 0.5);
+}
+
+.react-datepicker__header {
+  background-color: #f0f0f0; /* 뉴모피즘 배경색 */
+  border-bottom: none;
+}
+
+.react-datepicker__day-name {
+  color: #495057; /* 뉴모피즘 텍스트 색상 */
+}
+
+.react-datepicker__day {
+  border-radius: 50%; /* 날짜 버튼 둥글게 */
+  background-color: #e3f2fd; /* 뉴모피즘 날짜 버튼 색상 */
+  color: #1976d2;
+}
+
+.react-datepicker__day:hover {
+  background-color: #bbdefb; /* 호버 시 색상 변경 */
+}
+
+.react-datepicker__day--selected {
+  background-color: #1976d2; /* 선택된 날짜 색상 */
+  color: #ffffff;
+}
+
+.userReport-datepicker-cancel-button {
+  padding: 6px 12px;
+  margin-left: 20px;
+  border-radius: 12px;
+  background-color: #e3fdef; /* 뉴모피즘 버튼 색상 */
+  color: #d22f19;
+  border: none;
+  cursor: pointer;
+  font-family: "eMedium"; /* 원하는 폰트 적용 */
+  font-size: 0.85em;
+  transition: background-color 0.3s;
+  box-shadow: -2px -2px 5px #ffffff, 2px 2px 5px rgba(94, 104, 121, 0.2); /* 뉴모피즘 버튼 그림자 */
+}
+
+.userReport-datepicker-cancel-button:hover {
+  background-color: #bbf3d5;
+  box-shadow: -2px -2px 5px #ffffff, 2px 2px 5px rgba(94, 104, 121, 0.3); /* 호버 시 그림자 강조 */
+}
+
+/* DatePicker 입력 필드 */
+.custom-datepicker-input {
+  position: relative;
+  z-index: 1;
+  width: 200px;
+  font-family: "eMedium";
+  font-size: 16px;
+  padding: 8px 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #f7c7c7;
+  box-shadow: inset 2px 2px 5px rgba(94, 104, 121, 0.3), inset -2px -2px 5px #ffffff;
+  color: #495057;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-datepicker-input:focus {
+  box-shadow: inset 3px 3px 6px rgba(94, 104, 121, 0.4), inset -3px -3px 6px #ffffff;
+}
+
+/* DatePicker 포털 */
+#datepicker-portal {
+  position: fixed;
+  z-index: 10000;
+}
+
+/* 모달 오버레이 추가 */
+.datepicker-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-height: 10px;
+  z-index: 9998;
+}
+
+/* 신고 내용과 주소 칼럼 말줄임표 처리 */
+.userReport-table td:nth-child(3), /* 신고 내용 */
+.userReport-table td:nth-child(4) { /* 주소 */
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* AI 분석 결함 유형 말줄임표 처리 */
+.userReport-table td:nth-child(6) {
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

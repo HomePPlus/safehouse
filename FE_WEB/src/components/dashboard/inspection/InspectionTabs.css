@@ -1,0 +1,158 @@
+/* 컨테이너 스타일 */
+.inspection-tabs-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 숨겨진 라디오 버튼 */
+.tab-input {
+  display: none; /* 라디오 버튼 숨김 */
+}
+
+/* 탭 버튼 스타일 */
+.inspection-tabs {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.tab-label {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #666666; /* 기본 텍스트 색상 */
+  cursor: pointer;
+  background-color: #d4f0a8; /* 활성화된 탭 배경색 */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.tab-label:hover {
+  background-color: #e0e0e0; /* 호버 시 배경색 */
+}
+
+.tab-input:checked + .tab-label {
+  background-color: #f0d7d7; /* 기본 배경색 */
+  color: #e06767; /* 활성화된 탭 텍스트 색상 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 볼록한 효과를 위한 box-shadow */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 5px; /* 하단 경계를 약간 둥글게 */
+  border-bottom-right-radius: 5px; /* 하단 경계를 약간 둥글게 */
+}
+
+/* 콘텐츠 영역 스타일 */
+.tab-content {
+  background-color: transparent;
+  border-radius: 0px 10px 10px 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 콘텐츠 영역에도 box-shadow 적용 */
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.tab-panel {
+  display: none; /* 기본적으로 숨김 */
+}
+
+#reports-tab:checked ~ .tab-content #reports-content,
+#inspections-tab:checked ~ .tab-content #inspections-content {
+  display: block; /* 선택된 탭의 콘텐츠만 표시 */
+}
+
+/* 탭 헤더 영역 스타일 수정 */
+.tabs-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  background-color: transparent;
+  gap: 10px; /* 탭과 필터 사이 간격 */
+}
+
+/* 상태 필터 스타일 수정 */
+.status-filter {
+  padding: 8px 16px;
+  height: 35px;
+  border-radius: 10px;
+  font-family: "eMedium";
+  font-size: 14px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 14px;
+  padding-right: 32px;
+  transition: all 0.3s ease;
+  margin-left: 10px; /* 탭과의 간격 */
+  margin-bottom: px;
+}
+
+/* 상태별 스타일 */
+.status-filter.전체 {
+  background-color:#b9baf0;
+  color: #495057;
+}
+
+.status-filter.예정됨 {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.status-filter.진행중 {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.status-filter.완료됨 {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-filter.취소됨 {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* 포커스 시 box-shadow 제거 */
+.status-filter:focus {
+  outline: none;
+}
+
+/* 옵션 스타일링 */
+.status-filter option {
+  padding: 12px;
+  font-family: "eMedium";
+  border: none;
+}
+
+/* 각 상태별 옵션 스타일 */
+.status-filter option[value="전체"] {
+  background-color: #ebf1f7;
+  color: #495057;
+}
+
+.status-filter option[value="예정됨"] {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.status-filter option[value="진행중"] {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.status-filter option[value="완료됨"] {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-filter option[value="취소됨"] {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* 테이블 컨테이너 상단 여백 제거 */
+.inspection-table-container {
+  margin-top: 0;
+  padding-top: 0;
+}

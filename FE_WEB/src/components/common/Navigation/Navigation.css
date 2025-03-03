@@ -1,0 +1,41 @@
+
+.nav {
+  --link-color: rgb(119, 124, 119);
+  --link-hover-color: rgb(99, 144, 113);
+  display: flex;
+  flex-direction: row;  /* 가로 정렬을 위해 추가 */
+  gap: 20px;
+  align-items: center;  /* 세로 중앙 정렬을 위해 추가 */
+}
+
+.nav-item {
+  color: var(--link-color);  /* 여기서 기본 색상이 적용됨 */
+  text-decoration: none;
+  position: relative;
+  font-size: 16px;  /* 원하는 글씨 크기로 조절 */
+  font-weight: 100;  /* 글씨 두께도 조절 가능 */
+  padding: 1rem;
+}
+
+.nav-item:hover .svg-border,
+.nav-item.is-active .svg-border {
+  color: var(--link-hover-color);  /* 여기서 호버/활성화시 색상이 적용됨 */
+  stroke-dashoffset: 202;
+}
+.nav-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.svg-border {
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  stroke-dashoffset: 101;
+  stroke-dasharray: 101 101;
+  stroke-width: 7px;
+  top: 0;
+  transition: all .5s, stroke .3s;
+}

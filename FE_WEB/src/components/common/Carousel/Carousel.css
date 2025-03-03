@@ -1,0 +1,172 @@
+.carousel {
+  position: relative;
+  width: 23rem;
+  height: 23rem;
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+
+.card-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(calc(var(--offset) * 50deg))
+    scaleY(calc(1 + var(--abs-offset) * -0.4))
+    translateZ(calc(var(--abs-offset) * -30rem))
+    translateX(calc(var(--direction) * -5rem));
+  filter: blur(calc(var(--abs-offset) * 1rem));
+  transition: all 0.3s ease-out;
+}
+
+/* .card {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background: linear-gradient(145deg, #cea0a0, #a9bfb7);
+    border-radius: 1rem;
+    transition: all 0.3s ease-out;
+  } */
+
+.card {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  background: linear-gradient(145deg, #cea0a0, #a9bfb7);
+  border-radius: 1rem;
+  transition: all 0.3s ease-out;
+  position: relative;
+}
+
+/* 반짝이는 테두리 효과만 적용 */
+.card:hover {
+  border: 4px solid rgba(84, 80, 80, 0.8);
+  /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); */
+  animation: glowing 1.5s infinite;
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 15px rgba(212, 164, 164, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(212, 164, 164, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(212, 164, 164, 0.8);
+  }
+}
+
+.card-image-container {
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card p,
+.card h2 {
+  text-align: center;
+  color: rgba(34, 32, 32, 0.8);
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 0 0.7em;
+  transition: all 0.3s ease-out;
+  opacity: var(--active);
+  background-color: transparent; /* 배경색 제거 */
+}
+
+.carousel-nav {
+  color: rgba(84, 80, 80, 0.8);
+  font-size: 5rem;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  z-index: 2;
+  cursor: pointer;
+  user-select: none;
+  background: unset;
+  border: unset;
+}
+
+.carousel-nav.left {
+  transform: translateX(-100%) translatey(30%);
+}
+
+.carousel-nav.right {
+  right: 0;
+  transform: translateX(150%) translatey(30%);
+}
+
+/* Card 내부 요소 스타일링 */
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.result-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .result-overlay {
+  opacity: 1;
+}
+
+.result-box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result-box.error {
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+}
+
+.confidence {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.test-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  background: #01411f;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.test-button:disabled {
+  background: #666;
+  cursor: not-allowed;
+}
+
+.test-button:hover:not(:disabled) {
+  background: #017d34;
+  transform: translateX(-50%) scale(1.05);
+}

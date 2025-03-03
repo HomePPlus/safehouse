@@ -1,0 +1,17 @@
+.text-container {
+    position: relative;
+    top: 70px;
+    left: 20px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  /* 초록색 텍스트 */
+.text-container > .logo-green {
+    color:rgb(8, 68, 13)  !important; 
+  }
+  
+  /* 회색 텍스트 */
+.text-container > .logo-gray {
+    color: #666 !important;
+  }

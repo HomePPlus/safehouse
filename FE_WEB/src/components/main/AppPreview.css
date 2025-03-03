@@ -1,0 +1,142 @@
+.appcard-container {
+  padding: 100px;
+  background: linear-gradient(180deg, #ffffff, #ebe8d5);
+  min-height: 100vh;
+}
+
+.appcard-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #104e1e;
+  margin-bottom: 60px;
+  font-family: 'eBold';
+}
+
+.appcard-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.appcard-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #104e1e;
+  margin-bottom: 15px;
+  font-family: 'eBold';
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: #666;
+  font-family: 'eLight';
+}
+
+.section-screens {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  padding: 20px 0;
+  flex-wrap: nowrap;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.appcard-item {
+  flex: 0 0 300px;
+  min-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.appcard-item:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .appcard-container {
+    padding: 20px;
+  }
+
+  .section-screens {
+    gap: 20px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+}
+
+.appcard-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 
+    8px 8px 15px rgba(0, 0, 0, 0.1),
+    -8px -8px 15px rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s ease;
+}
+
+.appcard-qr:hover {
+  transform: translateY(-5px);
+}
+
+.appcard-qr-text {
+  font-size: 14px;
+  color: #104e1e;
+  font-family: 'eLight';
+}
+
+/* 스크롤바 스타일링 */
+.section-screens::-webkit-scrollbar {
+  height: 8px;
+}
+
+.section-screens::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.section-screens::-webkit-scrollbar-thumb {
+  background:  #0d3d17;
+  border-radius: 4px;
+}
+
+.section-screens::-webkit-scrollbar-thumb:hover {
+  background: #0d3d17;
+} 
+
+.preview-dashboard-section {
+  background: transparent;
+  background-color: transparent;
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+
+.preview-dashboard-section .app-card-thumb {
+  top: 15px;
+  height: 460px;  /* 대시보드 섹션의 카드 높이 증가 */
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background-position: top center;  /* 이미지 위치 조정 */
+}

@@ -1,0 +1,120 @@
+/* report-wrapper 클래스를 직접 사용할 것이므로 wrapper 관련 스타일은 제거 */
+.report-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: 910px;
+  background: linear-gradient(180deg, #ffffff, #ebe8d5);
+}
+
+.community-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.form-textarea{
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* 버튼 스타일 수정 */
+.community-post-write-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  margin-top: 13px;
+  background: linear-gradient(180deg, #ffffff, #ebe8d5);
+}
+
+.community-post-input-wrapper {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.community-post-input-wrapper label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.community-post-button-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.community-post-submit-button,
+.community-post-cancel-button {
+  padding: 8px 30px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  min-width: 100px;
+}
+
+.community-post-submit-button {
+  background-color: rgb(10, 90, 24) !important;
+  color: white !important;
+}
+
+.community-post-submit-button:hover {
+  background-color: rgb(10, 110, 24) !important;
+  color: rgb(240, 227, 108) !important;
+  transform: scale(1.04);
+}
+
+.community-post-cancel-button {
+  background-color: #ffd84d;
+  color: #333;
+}
+
+.community-post-cancel-button:hover {
+  background-color: rgb(10, 110, 24) !important;
+  color: white !important;
+  transform: scale(1.02);
+}
+
+.community-post-submit-button:disabled,
+.community-post-cancel-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .community-post-write-container {
+    padding: 16px;
+    margin-top: 40px;
+  }
+
+  .community-post-button-wrapper {
+    flex-direction: column;
+  }
+
+  .community-post-submit-button,
+  .community-post-cancel-button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}

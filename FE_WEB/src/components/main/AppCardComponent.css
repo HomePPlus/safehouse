@@ -1,0 +1,111 @@
+/* 전체 카드를 감싸는 컨테이너 */
+.app-card-perspective {
+  width: 100%;
+  margin-top: 30px;
+  perspective: 1000px;
+  background-color: transparent;
+  padding: 30px; /* 배경 카드와의 여백 */
+}
+
+/* 배경 카드 - 메인 카드를 감싸는 큰 카드 */
+.app-card {
+  width: 330px;
+  height: 500px;  /* 기본 높이 */
+  margin: auto;
+  background: linear-gradient(145deg, #ec8a8a, #d3f5bc);
+  border-radius: 20px;
+  box-shadow: 
+    15px 15px 30px rgba(0, 0, 0, 0.3),
+    -15px -15px 30px rgba(255, 255, 255, 0.8),
+    inset 5px 5px 15px rgba(255, 247, 178, 0.5),
+    inset -5px -5px 15px rgba(255, 238, 147, 0.3);
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-out;
+  position: relative;
+  cursor: pointer;
+  transform: rotateX(0deg) rotateY(0deg);
+  will-change: transform;
+}
+
+/* 실제 컨텐츠를 담는 내부 카드 */
+.app-card-thumb {
+  position: absolute;
+  top: 10px; /* 배경 카드와의 간격 */
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background-size: cover;
+  border-radius: 15px;
+  box-shadow: 
+    8px 8px 15px rgba(0, 0, 0, 0.2),
+    -8px -8px 15px rgba(255, 255, 255, 0.7);
+  transform: translateZ(20px);
+}
+
+/* 카드 제목 스타일링 */
+.app-card-title {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  font-size: 40px;
+  font-weight: 100;
+  transform: translateZ(40px);
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+/* 카드 부제목 스타일링 */
+.app-card-subtitle {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, 0) translateZ(30px);
+  font-size: 37px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+/* hover 효과 제거 (선택사항) */
+.app-card:hover {
+  box-shadow: 
+    15px 15px 30px rgba(0, 0, 0, 0.3),
+    -15px -15px 30px rgba(255, 255, 255, 0.8),
+    inset 5px 5px 15px rgba(255, 247, 178, 0.5),
+    inset -5px -5px 15px rgba(255, 238, 147, 0.3);
+}
+
+/* 배경 카드의 노란빛 효과 */
+.app-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background: linear-gradient(145deg, 
+    rgba(255, 247, 178, 0.1),
+    rgba(255, 239, 147, 0));
+  pointer-events: none;
+}
+
+/* preview 모드일 때는 3D 효과 제거하고 단순 호버 효과만 적용 */
+.preview-mode .app-card {
+  transform: none !important;
+  transition: transform 0.3s ease;
+}
+
+.preview-mode .app-card:hover {
+  transform: translateY(-10px) !important;
+}
+
+.preview-mode .app-card-thumb {
+  transform: none !important;
+}
+

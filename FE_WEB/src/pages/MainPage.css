@@ -1,0 +1,151 @@
+.main-container {
+  width: 100%;
+  height: 350vh;
+  overflow-y: auto;
+  padding-top: 80px; /* 메인 콘텐츠가 헤더 높이만큼 아래로 밀려나도록 설정 */
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #a3c0b5 30%,
+    rgba(242, 200, 200, 1),
+    #a3c0b5 70%,
+    rgba(242, 200, 200, 1) 100%
+  );
+  position: relative;
+  overflow-x: hidden;  /* 추가: 가로 스크롤 방지 */
+}
+
+.typing-text-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 1s ease-out;
+  position: relative;
+}
+
+.typing-text-section.move-up {
+  transform: translateY(-30vh);
+}
+
+.typing-text {
+  font-size: 5rem;
+  font-weight: bold;
+  white-space: pre;
+  margin-bottom: -200px;
+  border-right: 2px solid #2c3e50;
+  animation: blink 0.7s infinite;
+}
+
+.post-animation-text {
+  position: absolute;
+  top: 10%;
+  left: 38%;
+  color: #2c3e50;
+  font-size: 50px;
+  opacity: 1; /* 초기값 0으로 설정 */
+  transition: opacity 0.5s ease-in-out; /* 부드러운 전환 효과 추가 */
+  visibility: hidden; /* 초기에 완전히 숨김 */
+  pointer-events: none; /* 숨김 상태에서 상호작용 방지 */
+}
+
+.post-animation-text.show {
+  opacity: 2;
+  visibility: inherit;
+}
+
+.post-animation-text .gray-text {
+  color: #666;
+}
+
+.post-animation-text .blue-text {
+  color: #1b5509;
+}
+.carousel-section {
+  position: absolute;
+  width: 100%;
+  height: 120vh;
+  top: 100vh;
+  background: transparent;
+  transition: transform 1s ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-section.show {
+  transform: translateY(-30vh);
+}
+
+.carousel-intro-text {
+  font-size: 2.3rem;
+  color: rgba(34, 32, 32, 0.8);
+  font-weight: bold;
+  opacity: 0;
+  margin-top: 50vh;
+  transition: opacity 1s ease-out;
+  margin-bottom: 3rem;
+  position: relative;
+  will-change: transform;
+}
+
+.carousel-intro-text.show {
+  opacity: 1;
+}
+
+.carousel-container {
+  opacity: 1;
+  transition: none;
+  margin-bottom: 50vh;
+}
+
+.carousel-container.show {
+  opacity: 1;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.fixed-scroll-image {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.fixed-scroll-image img {
+  width: 80px;
+  height: auto;
+}
+
+/* app-card-section 스타일 제거하고 아래 스타일로 대체 */
+.app-download-section {
+  position: absolute;
+  bottom: 30vh;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.4s ease-out;
+  padding: 60px 0;
+  z-index: 10;
+}
+
+.app-download-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.defect-diagnosis {
+  color: #2d323d; /* 예를 들어 주황색으로 변경 */
+}
