@@ -3,6 +3,8 @@
 > **노후 주택 안전 AI 프로젝트** - KT AIVLE School 6기 빅프로젝트  
 > 건축물 결함 탐지 & 체크리스트 기반 자동 보고서 생성 시스템  
 
+![poster](https://github.com/user-attachments/assets/1f62d13f-e62d-45e5-9a6d-efd08fc9d8ee)
+
 📅 **개발 기간**: 2025년 1월 2일 ~ 2월 17일
 
 ---
@@ -27,7 +29,8 @@
 
 ## 🏗️ System Architecture
 
-![architecture](https://yourimageurl.com/architecture.png)
+![architecture](https://github.com/user-attachments/assets/7550dc0d-ba7c-4910-9701-3e8381c641d6)
+
 
 ---
 
@@ -61,9 +64,9 @@
     <td><strong>담당</strong></td>
     <td align="center"><strong>PM / DevOps</strong></td>
     <td align="center"><strong>Backend Lead</strong></td>
-    <td align="center"><strong>Tech Lead</strong></td>
-    <td align="center"><strong>AI 모델 개발</strong></td>
-    <td align="center"><strong>AI 모델 개발</strong></td>
+    <td align="center"><strong>PL / Tech Lead</strong></td>
+    <td align="center"><strong>Co-AI Lead</strong></td>
+    <td align="center"><strong>Co-AI Lead</strong></td>
   </tr>
   <tr>
     <td><strong>역할</strong></td>
@@ -86,7 +89,7 @@
       - 결함 탐지 모델 성능 개선 (튜닝, 최적화) <br>
       - RESTful API 설계 및 JPA를 활용한 DB 최적화 <br>
       - JWT 기반 인증 및 RBAC 구현 <br>
-      - FastAPI 기반 결함 탐지/신고 기능 API 개발 <br>
+      - FastAPI 기반 결함 탐지 및 신고 기능 API 개발 <br>
       - 대시보드 통계 및 일정 관리 API 구현 <br>
       - React, GSAP, Three.js 사용한 실시간 대시보드 및 애니메이션 UI 설계 및 구현
     </td>
