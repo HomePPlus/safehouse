@@ -1,11 +1,34 @@
 # 🏡 AI가 만드는 편안한 안식처 - "안주"
 
 > **노후 주택 안전 AI 프로젝트** - KT AIVLE School 6기 빅프로젝트  
-> 건축물 결함 탐지 & 체크리스트 기반 자동 보고서 생성 시스템  
+> 노후 건축물 안전점검을 위한 AI 기반 결함 탐지 및 자동 보고 시스템
 
 ![poster](https://github.com/user-attachments/assets/1f62d13f-e62d-45e5-9a6d-efd08fc9d8ee)
 
 📅 **개발 기간**: 2025년 1월 2일 ~ 2월 17일
+
+---
+
+## 🌟 프로젝트 소개
+**"안주"**는 건물의 구조적 결함을 신속하게 탐지하고, 이를 자동으로 문서화하여 보고서를 생성하는 AI 솔루션입니다.  
+노후 건축물의 유지보수를 돕고, 입주민의 안전 보장과 점검자의 업무 효율성을 높이는 것을 목표로 합니다.
+
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/361cc837-947f-4b16-ad69-7ccb5c313400" />
+
+
+### 🔍 주요 서비스 내용
+1. 입주민 서비스
+- AI 결함 모델 체험 : 입주민이 AI 결함 모델을 체험함으로써 그에 대한 정보를 얻고, 노후주택 관리에 대한 관심과 자발적 참여 유도.
+- AI 결함 탐지 및 신고 : AI 기술을 활용하여 건축물의 균열, 박리, 철근 노출 등의 결함을 자동으로 탐지하고, 입주민이 이를 확인하고 신고할 수 있는 시스템을 제공.
+
+2. 점검자 서비스
+- 신고에 대한 분석 결과 저장 및 위험 점수 표기 : 점검자가 결함 분석 시 AI 분석 결과를 참고하여 더욱 정확한 분석 가능. 위험 점수를 확인하여 결함 위험도 파악.
+- 대시보드 및 실시간 현황 관리 시스템 : 웹 및 모바일 대시보드를 통해 점검 예약과 보고서를 자동화. 결함 통계와 예약 일정 등을 시각적으로 제공하며 지도와 연동하여 위치 기반 점검 관리 지원.
+- LangChain 기반 AI 자동 보고서 생성 : 점검자가 작성한 점검 체크리스트를 기반으로 보고서를 생성하여 문서 업무 부담을 줄이고 효율성을 높임.
+  
+### 🎯 활용 데이터  
+노후 건물 결함 이미지 데이터 (**[AIHub 건물 균열 탐지 이미지](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=data&dataSetSn=162)**, **[AIHub 건물 균열 탐지 이미지(고도화)](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=data&dataSetSn=71769)**), 점검 체크리스트 데이터  
+
 
 ---
 
@@ -36,8 +59,11 @@
 
 ## 📖 Documentation
 
-📌 **Notion**: [Project Documentation](https://scarce-sweatshirt-fdb.notion.site/19db1ca2aef380a58b14e2b04e3dc611?pvs=4)  
-📌 **Project Review**: [Final Report](https://file.notion.so/f/f/a40f9efb-1e4b-46e1-b404-7bbf88f9d194/db8071b8-b1e5-45b7-8e68-749084b9fae2/%EB%B9%85%ED%94%84_%EB%B0%9C%ED%91%9C%ED%9A%8C_%ED%9B%84%EA%B8%B0%EA%B8%80.pdf?table=block&id=1a5b1ca2-aef3-805a-89cf-e4d761b03c8e&spaceId=a40f9efb-1e4b-46e1-b404-7bbf88f9d194&expirationTimestamp=1740960000000&signature=4hn3jcrHvDc0c9ejFDRSUts-TIKyRq1HjdQ8hRqG_kM&downloadName=%EB%B9%85%ED%94%84+%EB%B0%9C%ED%91%9C%ED%9A%8C+%ED%9B%84%EA%B8%B0%EA%B8%80.pdf)
+📌 **Notion**: [Project Documentation](https://scarce-sweatshirt-fdb.notion.site/19db1ca2aef380a58b14e2b04e3dc611?pvs=4)
+
+📌 **Project Review**: [Testimonials](https://drive.google.com/file/d/1k76NBAO6u8DexW48oakvgDsmSix5Zx90/view)
+
+📌 **PPT**: [Slides](https://drive.google.com/file/d/1H_tA5ZEzs_UweFeldMJ2lhI6RDpdx3oW/view)
 
 ---
 
