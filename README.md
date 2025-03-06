@@ -78,18 +78,18 @@
       - 네이버/구글 지도 API를 통한 결함 위치 시각화
     </td>
     <td align="center">
-      - FastAPI 기반 RESTful API 개발 및 통합 <br>
-      - Azure Storage Container에 데이터 업로드 및 다운로드 기능 개발 <br>
-      - CRUD 작업을 위한 엔드포인트 개발 및 최적화 <br>
+      - FastAPI 기반 RESTful API 구현 및 통합 <br>
+      - Azure Storage Container에 데이터 업로드 및 다운로드 기능 구현 <br>
+      - CRUD 작업을 위한 엔드포인트 구현 및 최적화 <br>
       - 점검자 체크리스트 DB 설계 및 생성 <br>
-      - 입주민/점검자 커뮤니티 개발 <br>
+      - 입주민/점검자 커뮤니티 API 구현 <br>
       - 웹 에러페이지 개발 및 CSS 스타일링 최적화
     </td>
     <td align="center">
       - 결함 탐지 모델 성능 개선 (튜닝, 최적화) <br>
       - RESTful API 설계 및 JPA를 활용한 DB 최적화 <br>
       - JWT 기반 인증 및 RBAC 구현 <br>
-      - FastAPI 기반 결함 탐지 및 신고 기능 API 개발 <br>
+      - FastAPI 기반 결함 탐지 및 신고 기능 API 구현 <br>
       - 대시보드 통계 및 일정 관리 API 구현 <br>
       - React, GSAP, Three.js 사용한 실시간 대시보드 및 애니메이션 UI 설계 및 구현
     </td>
